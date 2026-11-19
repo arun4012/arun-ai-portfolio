@@ -1,4 +1,513 @@
 {
-  "generated": "placeholder - run scripts/generate-index.mjs to populate",
-  "chunks": []
+  "generated": "2026-11-19T18:24:37.501Z",
+  "embeddingModel": "@cf/baai/bge-base-en-v1.5",
+  "totalChunks": 72,
+  "hasRealEmbeddings": false,
+  "note": "Embeddings are empty placeholders. Re-run with CF_ACCOUNT_ID and CF_API_TOKEN to populate.",
+  "chunks": [
+    {
+      "id": "certifications-1.-kubernetes-and-cloud-native-associate-(kcna)-0",
+      "source": "certifications",
+      "section": "1. Kubernetes and Cloud Native Associate (KCNA)",
+      "text": "- **Issuing Organization:** Cloud Native Computing Foundation (CNCF)\n- **Status:** Completed\n- **Description:** Demonstrates foundational knowledge of Kubernetes and the cloud-native ecosystem, including container orchestration, cloud-native architecture, and the CNCF landscape.",
+      "embedding": []
+    },
+    {
+      "id": "certifications-2.-prompt-engineering-for-generative-ai-0",
+      "source": "certifications",
+      "section": "2. Prompt Engineering for Generative AI",
+      "text": "- **Issuing Organization:** Udemy\n- **Status:** Completed\n- **Description:** Covers techniques for effective prompt engineering with large language models, including chain-of-thought prompting, few-shot learning, and practical applications.",
+      "embedding": []
+    },
+    {
+      "id": "certifications-3.-aws-certified-solutions-architect-associate-(saa-c03)-0",
+      "source": "certifications",
+      "section": "3. AWS Certified Solutions Architect Associate (SAA-C03)",
+      "text": "- **Issuing Organization:** Amazon Web Services (AWS)\n- **Status:** In Progress\n- **Description:** Validates the ability to design distributed systems on AWS, covering compute, storage, networking, database, and security services. Currently preparing for the exam.",
+      "embedding": []
+    },
+    {
+      "id": "experience-system-engineer-—-tata-consultancy-services-(tcs)-0",
+      "source": "experience",
+      "section": "System Engineer — Tata Consultancy Services (TCS)",
+      "text": "**Duration:** July 2023 – Present\n**Location:** Chennai, India\n**Client:** Prudential Finance\n**Project:** ECM – Documentum Modernization",
+      "embedding": []
+    },
+    {
+      "id": "experience-overview-0",
+      "source": "experience",
+      "section": "Overview",
+      "text": "Working as a System Engineer at TCS, specializing in Angular development for Prudential Finance's Enterprise Content Management platform. The project involves modernizing legacy .NET applications by migrating them to Angular-based single-page applications.",
+      "embedding": []
+    },
+    {
+      "id": "experience-key-responsibilities-0",
+      "source": "experience",
+      "section": "Key Responsibilities",
+      "text": "#### Legacy Migration\n- Migrated legacy .NET (ASP.NET WebForms/MVC) front-end modules into Angular 15+, replacing server-rendered postback pages with a single-page application architecture for improved performance, scalability, and modern UX.",
+      "embedding": []
+    },
+    {
+      "id": "experience-key-responsibilities-1",
+      "source": "experience",
+      "section": "Key Responsibilities",
+      "text": "#### Component Development\n- Developed and maintained 40+ reusable Angular components for document import, approval workflows, search, and reporting modules of an Enterprise Content Management platform (OpenText Documentum) used for records management in the insurance domain.",
+      "embedding": []
+    },
+    {
+      "id": "experience-key-responsibilities-2",
+      "source": "experience",
+      "section": "Key Responsibilities",
+      "text": "#### UI Development\n- Built responsive, cross-browser UI using Angular Material, Angular CDK, Bootstrap 5, and SCSS, ensuring consistent behavior across Chrome, Edge, and Firefox.\n\n#### State Management\n- Implemented cross-component state management and real-time data synchronization using RxJS Subjects and BehaviorSubjects within shared Angular services.",
+      "embedding": []
+    },
+    {
+      "id": "experience-key-responsibilities-3",
+      "source": "experience",
+      "section": "Key Responsibilities",
+      "text": "#### API Integration\n- Collaborated with backend .NET teams to define, validate, and integrate REST API contracts using Angular HttpClient, applying RxJS operators (switchMap, catchError, retry) for resilient data handling and error recovery.",
+      "embedding": []
+    },
+    {
+      "id": "experience-key-responsibilities-4",
+      "source": "experience",
+      "section": "Key Responsibilities",
+      "text": "#### Database\n- Wrote SQL queries against Microsoft SQL Server to validate API responses, reproduce reported data discrepancies, and verify document metadata and workflow states while debugging front-end issues.",
+      "embedding": []
+    },
+    {
+      "id": "experience-key-responsibilities-5",
+      "source": "experience",
+      "section": "Key Responsibilities",
+      "text": "#### Access Control & Workflows\n- Implemented role-based access control and multi-stage approval workflows driven by Business Unit (BU) and Functional Group (FG) requirements, including role-based routing and conditional UI rendering.",
+      "embedding": []
+    },
+    {
+      "id": "experience-key-responsibilities-6",
+      "source": "experience",
+      "section": "Key Responsibilities",
+      "text": "#### Forms & Validation\n- Built complex dynamic forms using Angular Reactive Forms with custom validators, cross-field validation, and conditional field logic; developed custom directives and pipes for input validation (decimal precision, alphanumeric, currency formatting) and metadata display.",
+      "embedding": []
+    },
+    {
+      "id": "experience-key-responsibilities-7",
+      "source": "experience",
+      "section": "Key Responsibilities",
+      "text": "#### Performance Optimization\n- Optimized front-end performance by implementing lazy-loaded feature modules with a PreloadAllModules preloading strategy to keep the initial bundle small while making subsequent route navigation instant (reducing page load times by 20%).",
+      "embedding": []
+    },
+    {
+      "id": "experience-key-responsibilities-8",
+      "source": "experience",
+      "section": "Key Responsibilities",
+      "text": "- Applied OnPush Change Detection, Angular CDK virtual scrolling and offloaded table filtering, sorting, and pagination to a Web Worker to eliminate main-thread UI freezes on large datasets.\n\n#### Internationalization\n- Implemented internationalization (i18n) with ngx-translate supporting runtime language switching across English, Spanish, and Japanese with persisted user preference.",
+      "embedding": []
+    },
+    {
+      "id": "experience-key-responsibilities-9",
+      "source": "experience",
+      "section": "Key Responsibilities",
+      "text": "#### Dashboards & Reporting\n- Developed audit trail dashboards and compliance reporting interfaces using Chart.js, including interactive pie and bar charts with click-through drill-down and Excel export.\n\n#### Testing\n- Developed unit tests with Jasmine and Karma covering Angular components and services, and validated releases through regression testing to catch defects before deployment.",
+      "embedding": []
+    },
+    {
+      "id": "experience-key-responsibilities-10",
+      "source": "experience",
+      "section": "Key Responsibilities",
+      "text": "#### Agile & Collaboration\n- Worked in cross-functional teams with backend developers, QA engineers, and business stakeholders to translate Business Unit requirements into delivered features; established front-end coding standards and best-practices documentation, and conducted peer code reviews via Git/GitHub pull requests within Agile sprints (planning, stand-ups, retrospectives).",
+      "embedding": []
+    },
+    {
+      "id": "experience-key-responsibilities-11",
+      "source": "experience",
+      "section": "Key Responsibilities",
+      "text": "#### CI/CD\n- Supported CI/CD pipelines built on GitHub Actions for automated Angular builds and multi-environment deployments with JFrog Artifactory release bundles, and assisted in troubleshooting staging and production environment issues.",
+      "embedding": []
+    },
+    {
+      "id": "experience-key-responsibilities-12",
+      "source": "experience",
+      "section": "Key Responsibilities",
+      "text": "#### AI-Assisted Development\n- Applied AI-assisted development tools (Claude Code, GitHub Copilot) to accelerate component scaffolding, refactoring, and unit-test generation, and to navigate and document a large legacy codebase – reviewing and validating all generated output against project coding standards before merge.",
+      "embedding": []
+    },
+    {
+      "id": "experience-key-achievements-0",
+      "source": "experience",
+      "section": "Key Achievements",
+      "text": "- Reduced page load times by 20% through lazy loading, component refactoring, and render optimization.\n- Improved form data accuracy by implementing client-side validations, input sanitization, custom validation directives, and structured error handling, measurably reducing invalid submissions.",
+      "embedding": []
+    },
+    {
+      "id": "experience-key-achievements-1",
+      "source": "experience",
+      "section": "Key Achievements",
+      "text": "- Improved perceived application responsiveness through loading indicators, progress states, and optimized component rendering on data-heavy screens.\n- Contributed to automating builds and deployments, reducing manual deployment effort by 30%.\n- Participated in the TCS Generative AI Hackathon as part of continuous learning in emerging technologies.",
+      "embedding": []
+    },
+    {
+      "id": "faq-about-arun-0",
+      "source": "faq",
+      "section": "About Arun",
+      "text": "**Q: Who is Arun?**\nA: Arun Arivalagan is a Software Engineer with 3+ years of experience building enterprise Angular applications. He currently works as a System Engineer at Tata Consultancy Services (TCS), specializing in Angular development for Prudential Finance.",
+      "embedding": []
+    },
+    {
+      "id": "faq-about-arun-1",
+      "source": "faq",
+      "section": "About Arun",
+      "text": "**Q: What is Arun's professional summary?**\nA: Arun is a Software Engineer with 3+ years of experience building enterprise Angular applications in the insurance and financial services domain. He is experienced in migrating legacy .",
+      "embedding": []
+    },
+    {
+      "id": "faq-about-arun-2",
+      "source": "faq",
+      "section": "About Arun",
+      "text": "NET front-ends to Angular, component-driven architecture, RxJS-based state management, REST API integration, and responsive UI development with Angular Material and Bootstrap.\n\n**Q: Where is Arun located?**\nA: Arun is based in Salem, India.",
+      "embedding": []
+    },
+    {
+      "id": "faq-current-role-0",
+      "source": "faq",
+      "section": "Current Role",
+      "text": "**Q: What is Arun's current role?**\nA: Arun is currently working as a System Engineer at Tata Consultancy Services (TCS), specializing in Angular development.\n\n**Q: What company does Arun work for?**\nA: Arun works for Tata Consultancy Services (TCS). His current client is Prudential Finance.",
+      "embedding": []
+    },
+    {
+      "id": "faq-current-role-1",
+      "source": "faq",
+      "section": "Current Role",
+      "text": "**Q: What is Arun's current project?**\nA: Arun is working on the ECM – Documentum Modernization project for Prudential Finance. The project involves migrating legacy .NET WebForms/MVC applications to modern Angular single-page applications for an Enterprise Content Management platform (OpenText Documentum) used in the insurance domain.",
+      "embedding": []
+    },
+    {
+      "id": "faq-technical-skills-0",
+      "source": "faq",
+      "section": "Technical Skills",
+      "text": "**Q: What is Arun's primary technology?**\nA: Angular is Arun's primary technology. He has professional experience with Angular versions 15 through 21.\n\n**Q: What is Arun's experience with Angular?**\nA: Arun has 3+ years of professional Angular development experience at TCS.",
+      "embedding": []
+    },
+    {
+      "id": "faq-technical-skills-1",
+      "source": "faq",
+      "section": "Technical Skills",
+      "text": "He has developed and maintained 40+ reusable Angular components, implemented lazy loading, state management with RxJS, internationalization, and performance optimization. He has migrated legacy .NET applications to Angular SPAs.\n\n**Q: Does Arun know React or Vue?**\nA: Arun's professional experience is primarily with Angular. His resume does not list professional experience with React or Vue.js.",
+      "embedding": []
+    },
+    {
+      "id": "faq-technical-skills-2",
+      "source": "faq",
+      "section": "Technical Skills",
+      "text": "Any knowledge of these frameworks would be outside his documented professional experience.\n\n**Q: What is Arun's experience with RxJS?**\nA: Arun has extensive professional experience with RxJS, including Observables, Subjects, BehaviorSubjects, and operators like switchMap, catchError, retry, map, filter, tap, and debounceTime.",
+      "embedding": []
+    },
+    {
+      "id": "faq-technical-skills-3",
+      "source": "faq",
+      "section": "Technical Skills",
+      "text": "He uses RxJS for state management and API integration in his Angular projects.\n\n**Q: Does Arun have backend experience?**\nA: Arun's primary role is front-end development with Angular. He collaborates with backend .NET teams for REST API integration and writes SQL queries against Microsoft SQL Server for debugging. He does not list professional backend development as a primary responsibility.",
+      "embedding": []
+    },
+    {
+      "id": "faq-technical-skills-4",
+      "source": "faq",
+      "section": "Technical Skills",
+      "text": "**Q: Does Arun have experience with AWS?**\nA: Arun has exposure-level experience with AWS and is currently preparing for the AWS Certified Solutions Architect Associate (SAA-C03) certification. He does not have documented professional project experience with AWS services. AWS is in his learning journey.",
+      "embedding": []
+    },
+    {
+      "id": "faq-technical-skills-5",
+      "source": "faq",
+      "section": "Technical Skills",
+      "text": "**Q: Does Arun have experience with Python?**\nA: Arun's resume does not list Python as a professional skill. His primary development language is TypeScript with Angular.",
+      "embedding": []
+    },
+    {
+      "id": "faq-availability-&-contact-0",
+      "source": "faq",
+      "section": "Availability & Contact",
+      "text": "**Q: What is Arun's notice period?**\nA: Arun's notice period is 90 days. This information was last updated on November 19, 2026.\n\n**Q: How can I contact Arun?**\nA: You can contact Arun through:\n- Email: arunariraja@gmail.com\n- Phone: +91 9361483484\n- LinkedIn: linkedin.",
+      "embedding": []
+    },
+    {
+      "id": "faq-availability-&-contact-1",
+      "source": "faq",
+      "section": "Availability & Contact",
+      "text": "com/in/arunarivalagan\n\n**Q: Is Arun available for new opportunities?**\nA: Arun is available after completing his notice period of 90 days. For the most current availability, please contact him directly.",
+      "embedding": []
+    },
+    {
+      "id": "faq-education-0",
+      "source": "faq",
+      "section": "Education",
+      "text": "**Q: What is Arun's educational background?**\nA: Arun holds a B.E. in Electronics and Communication Engineering from M. Kumarasamy College of Engineering, Karur (2019–2023) with a CGPA of 8.8/10 (Distinction).",
+      "embedding": []
+    },
+    {
+      "id": "faq-certifications-0",
+      "source": "faq",
+      "section": "Certifications",
+      "text": "**Q: What certifications does Arun have?**\nA: Arun has the following certifications:\n1. Kubernetes and Cloud Native Associate (KCNA) – Cloud Native Computing Foundation (CNCF)\n2. Prompt Engineering for Generative AI – Udemy\n3. AWS Certified Solutions Architect Associate (SAA-C03) – In Progress",
+      "embedding": []
+    },
+    {
+      "id": "faq-strengths-0",
+      "source": "faq",
+      "section": "Strengths",
+      "text": "**Q: What are Arun's strengths?**\nA: Based on his professional experience, Arun's key strengths include:\n1. Angular expertise with 3+ years of enterprise application development\n2. Component-driven architecture with 40+ reusable components\n3. Performance optimization (20% page load reduction, virtual scrolling, Web Workers)\n4. Strong collaboration skills in cross-functional Agile teams\n5.",
+      "embedding": []
+    },
+    {
+      "id": "faq-strengths-1",
+      "source": "faq",
+      "section": "Strengths",
+      "text": "CI/CD and automation experience (30% deployment effort reduction)\n6. Continuous learning (KCNA certified, AWS certification in progress, GenAI hackathon participation)",
+      "embedding": []
+    },
+    {
+      "id": "projects-1.-ecm-–-documentum-modernization-(professional-project)-0",
+      "source": "projects",
+      "section": "1. ECM – Documentum Modernization (Professional Project)",
+      "text": "**Company:** Tata Consultancy Services (TCS)\n**Client:** Prudential Finance\n**Duration:** July 2023 – Present\n**Role:** System Engineer / Angular Developer",
+      "embedding": []
+    },
+    {
+      "id": "projects-description-0",
+      "source": "projects",
+      "section": "Description",
+      "text": "Enterprise Content Management platform modernization project for Prudential Finance's insurance operations. The project involves migrating legacy .NET WebForms/MVC applications to modern Angular single-page applications.",
+      "embedding": []
+    },
+    {
+      "id": "projects-business-context-0",
+      "source": "projects",
+      "section": "Business Context",
+      "text": "Prudential Finance's records management system was built on legacy .NET WebForms and MVC technologies. The postback-based architecture caused performance issues, poor user experience, and high maintenance costs. The modernization initiative aims to rebuild the front-end using Angular while preserving the existing .NET backend services.",
+      "embedding": []
+    },
+    {
+      "id": "projects-technology-stack-0",
+      "source": "projects",
+      "section": "Technology Stack",
+      "text": "- **Frontend:** Angular 15–21, TypeScript, Angular Material, Angular CDK, Bootstrap 5, SCSS\n- **Backend:** .NET (existing), REST APIs\n- **Database:** Microsoft SQL Server\n- **ECM Platform:** OpenText Documentum\n- **State Management:** RxJS Subjects, BehaviorSubjects, service-based state\n- **Charts:** Chart.",
+      "embedding": []
+    },
+    {
+      "id": "projects-technology-stack-1",
+      "source": "projects",
+      "section": "Technology Stack",
+      "text": "js\n- **i18n:** ngx-translate\n- **Testing:** Jasmine, Karma\n- **CI/CD:** GitHub Actions, JFrog Artifactory\n- **Tools:** Git, Jira, VS Code, Angular CLI",
+      "embedding": []
+    },
+    {
+      "id": "projects-architecture-0",
+      "source": "projects",
+      "section": "Architecture",
+      "text": "- Single-page application architecture replacing server-rendered postback pages\n- Component-driven design with 40+ reusable components\n- Lazy-loaded feature modules with PreloadAllModules strategy\n- Role-based access control with conditional UI rendering\n- Multi-stage approval workflows\n- REST API integration using Angular HttpClient with RxJS operators",
+      "embedding": []
+    },
+    {
+      "id": "projects-key-responsibilities-0",
+      "source": "projects",
+      "section": "Key Responsibilities",
+      "text": "- Migrating legacy .NET front-end modules to Angular 15+\n- Developing and maintaining 40+ reusable Angular components\n- Building responsive, cross-browser UI\n- Implementing state management with RxJS\n- Integrating REST APIs with error handling\n- Building complex dynamic forms with custom validation\n- Optimizing front-end performance\n- Implementing internationalization (i18n)\n- Developing audit das",
+      "embedding": []
+    },
+    {
+      "id": "projects-key-responsibilities-1",
+      "source": "projects",
+      "section": "Key Responsibilities",
+      "text": "hboards with Chart.js\n- Writing unit tests with Jasmine and Karma\n- Supporting CI/CD pipelines",
+      "embedding": []
+    },
+    {
+      "id": "projects-challenges-&-solutions-0",
+      "source": "projects",
+      "section": "Challenges & Solutions",
+      "text": "1. **Challenge:** Legacy postback pages caused slow page loads and poor UX.\n   **Solution:** Migrated to Angular SPA with lazy loading and preloading, reducing page load times by 20%.\n\n2. **Challenge:** Large datasets caused UI freezes during table operations.\n   **Solution:** Implemented Angular CDK virtual scrolling and offloaded filtering/sorting to Web Workers.\n\n3.",
+      "embedding": []
+    },
+    {
+      "id": "projects-challenges-&-solutions-1",
+      "source": "projects",
+      "section": "Challenges & Solutions",
+      "text": "**Challenge:** Complex approval workflows with varying business rules per department.\n   **Solution:** Built configurable role-based routing and conditional UI rendering driven by Business Unit and Functional Group requirements.\n\n4. **Challenge:** Maintaining consistency across multiple languages.",
+      "embedding": []
+    },
+    {
+      "id": "projects-challenges-&-solutions-2",
+      "source": "projects",
+      "section": "Challenges & Solutions",
+      "text": "**Solution:** Implemented ngx-translate with runtime language switching supporting English, Spanish, and Japanese.",
+      "embedding": []
+    },
+    {
+      "id": "projects-outcomes-0",
+      "source": "projects",
+      "section": "Outcomes",
+      "text": "- 20% reduction in page load times\n- 30% reduction in manual deployment effort through CI/CD automation\n- Measurable reduction in invalid form submissions through client-side validation\n- Improved application responsiveness on data-heavy screens\n\n---",
+      "embedding": []
+    },
+    {
+      "id": "projects-2.-arun-ai-portfolio-(personal-project)-0",
+      "source": "projects",
+      "section": "2. Arun AI Portfolio (Personal Project)",
+      "text": "**Type:** Personal Project\n**Duration:** November 2026\n**Role:** Full-Stack Developer",
+      "embedding": []
+    },
+    {
+      "id": "projects-description-0",
+      "source": "projects",
+      "section": "Description",
+      "text": "A responsive personal portfolio website with an integrated AI-powered chatbot using Retrieval-Augmented Generation (RAG). The chatbot acts as a virtual professional representative, answering questions about professional background using verified portfolio information.",
+      "embedding": []
+    },
+    {
+      "id": "projects-business-context-0",
+      "source": "projects",
+      "section": "Business Context",
+      "text": "Traditional portfolios provide static information. This project demonstrates both frontend engineering expertise and practical Generative AI implementation by combining a professional portfolio with an interactive AI assistant.",
+      "embedding": []
+    },
+    {
+      "id": "projects-technology-stack-0",
+      "source": "projects",
+      "section": "Technology Stack",
+      "text": "- **Frontend:** Angular 18, TypeScript, Tailwind CSS, Lucide icons\n- **Backend:** Cloudflare Pages Functions\n- **AI/LLM:** Cloudflare Workers AI (GLM-4.7-flash)\n- **Embeddings:** BAAI BGE (bge-base-en-v1.5)\n- **Retrieval:** Cosine similarity over JSON vector index\n- **Hosting:** Cloudflare Pages (free tier)\n- **Source Control:** GitHub",
+      "embedding": []
+    },
+    {
+      "id": "projects-architecture-0",
+      "source": "projects",
+      "section": "Architecture",
+      "text": "- Angular SPA with responsive design for all screen sizes\n- Floating chatbot accessible from all pages\n- Cloudflare Pages Functions for serverless API\n- RAG pipeline: document chunking → embedding generation → vector index → semantic retrieval → LLM response\n- Structured profile retrieval for factual fields (notice period, availability, contact info)\n- System prompt engineering for grounded, profe",
+      "embedding": []
+    },
+    {
+      "id": "projects-architecture-1",
+      "source": "projects",
+      "section": "Architecture",
+      "text": "ssional responses",
+      "embedding": []
+    },
+    {
+      "id": "projects-key-features-0",
+      "source": "projects",
+      "section": "Key Features",
+      "text": "- 8 portfolio sections (Hero, About, Skills, Experience, Projects, Certifications, Contact, Footer)\n- AI chatbot with suggested questions and conversation history\n- Resume download functionality\n- Zero-cost deployment using free tiers\n- Mobile-first responsive design",
+      "embedding": []
+    },
+    {
+      "id": "projects-challenges-&-solutions-0",
+      "source": "projects",
+      "section": "Challenges & Solutions",
+      "text": "1. **Challenge:** Zero-budget constraint for all services.\n   **Solution:** Used Cloudflare's free tier for hosting, AI inference, and embeddings; static JSON for vector storage.\n\n2. **Challenge:** Preventing AI hallucination about professional details.\n   **Solution:** Implemented RAG with structured profile retrieval and strict system prompt instructions.",
+      "embedding": []
+    },
+    {
+      "id": "skills-frontend-(professional-experience)-0",
+      "source": "skills",
+      "section": "Frontend (Professional Experience)",
+      "text": "- **Angular:** Versions 15–21, extensive professional experience building enterprise applications\n- **TypeScript:** Primary development language for Angular projects\n- **JavaScript:** ES6+ features, used alongside TypeScript\n- **HTML5:** Semantic markup, accessibility considerations\n- **CSS3 / SCSS:** Custom styling, responsive layouts, cross-browser compatibility",
+      "embedding": []
+    },
+    {
+      "id": "skills-ui-libraries-&-frameworks-(professional-experience)-0",
+      "source": "skills",
+      "section": "UI Libraries & Frameworks (Professional Experience)",
+      "text": "- **Angular Material:** Component library for enterprise UI\n- **Angular CDK:** Virtual scrolling, overlays, accessibility utilities\n- **Bootstrap 5:** Responsive grid and UI components\n- **ng-bootstrap:** Angular-native Bootstrap widgets",
+      "embedding": []
+    },
+    {
+      "id": "skills-reactive-programming-&-state-management-(professional-experience)-0",
+      "source": "skills",
+      "section": "Reactive Programming & State Management (Professional Experience)",
+      "text": "- **RxJS:** Observables, Subjects, BehaviorSubject, operators (switchMap, catchError, retry, map, filter, tap, debounceTime)\n- **Service-based State Management:** Shared Angular services with RxJS for cross-component communication\n- **NgRx:** Basic knowledge (not used extensively in production)",
+      "embedding": []
+    },
+    {
+      "id": "skills-angular-core-concepts-(professional-experience)-0",
+      "source": "skills",
+      "section": "Angular Core Concepts (Professional Experience)",
+      "text": "- Component architecture and dependency injection\n- Reactive Forms and Template-driven Forms\n- Routing, lazy loading, and preloading strategies\n- Custom directives and pipes\n- Internationalization (i18n) with ngx-translate\n- Responsive and cross-browser design",
+      "embedding": []
+    },
+    {
+      "id": "skills-testing-(professional-experience)-0",
+      "source": "skills",
+      "section": "Testing (Professional Experience)",
+      "text": "- **Jasmine:** Unit testing framework for Angular\n- **Karma:** Test runner\n- **Regression Testing:** Manual and automated",
+      "embedding": []
+    },
+    {
+      "id": "skills-apis-&-integration-(professional-experience)-0",
+      "source": "skills",
+      "section": "APIs & Integration (Professional Experience)",
+      "text": "- **REST APIs:** Design, consumption, and integration\n- **Angular HttpClient:** HTTP communication with interceptors\n- **JSON:** Data interchange format",
+      "embedding": []
+    },
+    {
+      "id": "skills-performance-optimization-(professional-experience)-0",
+      "source": "skills",
+      "section": "Performance Optimization (Professional Experience)",
+      "text": "- Lazy loading and code splitting\n- Preloading strategies (PreloadAllModules)\n- OnPush change detection\n- Virtual scrolling (Angular CDK)\n- Web Workers for offloading heavy computations",
+      "embedding": []
+    },
+    {
+      "id": "skills-database-(basic/supporting-knowledge)-0",
+      "source": "skills",
+      "section": "Database (Basic/Supporting Knowledge)",
+      "text": "- **Microsoft SQL Server:** Writing queries for debugging and validation purposes",
+      "embedding": []
+    },
+    {
+      "id": "skills-version-control-(professional-experience)-0",
+      "source": "skills",
+      "section": "Version Control (Professional Experience)",
+      "text": "- **Git:** Daily usage for version control\n- **GitHub:** Pull requests, code reviews, Actions\n- **Bitbucket:** Repository management",
+      "embedding": []
+    },
+    {
+      "id": "skills-package-management-0",
+      "source": "skills",
+      "section": "Package Management",
+      "text": "- **npm:** Primary package manager\n- **pnpm:** Alternative package manager",
+      "embedding": []
+    },
+    {
+      "id": "skills-ci/cd-&-cloud-(exposure/learning)-0",
+      "source": "skills",
+      "section": "CI/CD & Cloud (Exposure/Learning)",
+      "text": "- **GitHub Actions:** Automated builds and deployments\n- **JFrog Artifactory:** Release bundle management\n- **AWS:** Learning journey (SAA-C03 certification in progress)",
+      "embedding": []
+    },
+    {
+      "id": "skills-tools-&-practices-(professional-experience)-0",
+      "source": "skills",
+      "section": "Tools & Practices (Professional Experience)",
+      "text": "- Visual Studio Code\n- Angular CLI\n- Agile/Scrum methodology\n- Jira for project management",
+      "embedding": []
+    },
+    {
+      "id": "skills-ai-&-development-tools-(professional-experience)-0",
+      "source": "skills",
+      "section": "AI & Development Tools (Professional Experience)",
+      "text": "- **Claude Code:** AI-assisted development\n- **GitHub Copilot:** Code completion and generation\n- **Prompt Engineering:** Practical application in development workflows\n- **Chrome DevTools:** Debugging and performance profiling",
+      "embedding": []
+    },
+    {
+      "id": "skills-cloud-&-devops-(learning/certification)-0",
+      "source": "skills",
+      "section": "Cloud & DevOps (Learning/Certification)",
+      "text": "- **Kubernetes:** KCNA certified (Cloud Native Computing Foundation)\n- **AWS:** Solutions Architect Associate certification in progress\n- **Cloudflare:** Workers AI, Pages (used in this portfolio project)",
+      "embedding": []
+    },
+    {
+      "id": "skills-generative-ai-(learning/personal-projects)-0",
+      "source": "skills",
+      "section": "Generative AI (Learning/Personal Projects)",
+      "text": "- **LLM Integration:** Practical implementation with Cloudflare Workers AI\n- **RAG (Retrieval-Augmented Generation):** Document processing, embeddings, semantic search\n- **Prompt Engineering:** System prompts, context injection, grounded responses",
+      "embedding": []
+    }
+  ]
 }
