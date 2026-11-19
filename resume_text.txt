@@ -1,0 +1,85 @@
+sorting, and pagination to a Web Worker to eliminate main-thread UI freezes on large datasets.
+load times by 20%); applied OnPush Change Detection, Angular CDK virtual scrolling and offloaded table filtering,
+preloading strategy to keep the initial bundle small while making subsequent route navigation instant (reducing page
+–  Optimized front-end performance by implementing lazy-loaded feature modules with a PreloadAllModules
+currency formatting) and metadata display.
+conditional field logic; developed custom directives and pipes for input validation (decimal precision, alphanumeric,
+–  Built complex dynamic forms using Angular Reactive Forms with custom validators, cross-field validation, and
+Functional Group (FG) requirements, including role-based routing and conditional UI rendering.
+–  Implemented role-based access control and multi-stage approval workflows driven by Business Unit (BU) and
+discrepancies, and verify document metadata and workflow states while debugging front-end issues.
+–  Wrote SQL queries against Microsoft SQL Server to validate API responses, reproduce reported data
+HttpClient, applying RxJS operators (switchMap, catchError, retry) for resilient data handling and error recovery.
+–  Collaborated with backend .NET teams to define, validate, and integrate REST API contracts using Angular
+BehaviorSubjects within shared Angular services.
+–  Implemented cross-component state management and real-time data synchronization using RxJS Subjects and
+consistent behavior across Chrome, Edge, and Firefox.
+–  Built responsive, cross-browser UI using Angular Material, Angular CDK, Bootstrap 5, and SCSS, ensuring
+management in the insurance domain.
+reporting modules of an Enterprise Content Management platform (OpenText Documentum) used for records
+–  Developed and maintained 40+ reusable Angular components for document import, approval workflows, search, and
+modern UX.
+server-rendered postback pages with a single-page application architecture for improved performance, scalability, and
+–  Migrated legacy .NET (ASP.NET WebForms/MVC) front-end modules into Angular 15+, replacing
+Tata Consultancy Services, Chennai| Client: Prudential Finance                 Project: ECM – Documentum Modernization
+System Engineer                                                                                                    July 2023 – Present
+Professional Experience
+AI & Dev Tools:  Claude Code, Copilot, Prompt Engineering, Chrome DevTools
+Tools & Practices:  Visual Studio Code, Angular CLI, Agile/Scrum, Jira
+CI/CD & Cloud (exposure):  GitHub Actions, JFrog Artifactory, AWS
+Package Management:  npm, pnpm
+Version Control:  Git, GitHub, Bitbucket
+Workers
+Performance:  Lazy Loading, Preloading Strategies, Code Splitting, Virtual Scrolling (Angular CDK), Web
+APIs & Integration:  REST APIs, Angular HttpClient, JSON
+Testing:  Jasmine, Karma, Regression Testing
+Loading, Custom Directives & Pipes, Internationalization (i18n), Responsive & Cross-browser Design
+Core Concepts:  Components, Dependency Injection, Reactive & Template-driven Forms, Routing & Lazy
+Reactive & State:  RxJS (Observables, Subjects, BehaviorSubject, operators), service-based state, NgRx (Basics)
+UI Libraries:  Angular Material, Angular CDK, Bootstrap 5, ng-bootstrap
+Database:  Microsoft SQL Server (Basics)
+Frontend:  Angular 15–21, TypeScript, JavaScript (ES6+), HTML5, CSS3, SCSS
+Technical Skills
+reusable, maintainable code.
+environments to translate requirements into production features, with a focus on performance optimization and
+Material and Bootstrap.  Skilled at collaborating with backend, QA, and business teams in cross-functional Agile
+architecture, RxJS-based state management, REST API integration, and responsive UI development with Angular
+financial services domain.  Experienced in migrating legacy .NET front-ends to Angular, component-driven
+Software Engineer with 3+ years of experience building enterprise Angular applications in the insurance and
+Professional Summary
++91 9361483484| arunariraja@gmail.com| linkedin.com/in/arunarivalagan| Salem, India
+Angular Developer| Front-End Engineer
+Arun Arivalagan
+----------------Page (0) Break----------------
+•  AWS Certified Solutions Architect Associate (SAA-C03) – In Progress
+•  Prompt Engineering for Generative AI – Udemy
+•  Kubernetes and Cloud Native Associate (KCNA) – Cloud Native Computing Foundation (CNCF)
+Certifications
+M. Kumarasamy College of Engineering, Karur                                          CGPA: 8.8 / 10 (Distinction)
+B.E. Electronics and Communication Engineering                                                                      2019 – 2023
+Education
+•  Participated in the TCS Generative AI Hackathon as part of continuous learning in emerging technologies.
+•  Contributed to automating builds and deployments, reducing manual deployment effort by 30%.
+rendering on data-heavy screens.
+•  Improved perceived application responsiveness through loading indicators, progress states, and optimized component
+and structured error handling, measurably reducing invalid submissions.
+•  Improved form data accuracy by implementing client-side validations, input sanitization, custom validation directives,
+•  Reduced page load times by 20% through lazy loading, component refactoring, and render optimization.
+Key Achievements
+environment issues.
+deployments with JFrog Artifactory release bundles, and assisted in troubleshooting staging and production
+–  Supported CI/CD pipelines built on GitHub Actions for automated Angular builds and multi-environment
+all generated output against project coding standards before merge.
+refactoring, and unit-test generation, and to navigate and document a large legacy codebase – reviewing and validating
+–  Applied AI-assisted development tools (Claude Code, GitHub Copilot) to accelerate component scaffolding,
+stand-ups, retrospectives).
+documentation, and conducted peer code reviews via Git/GitHub pull requests within Agile sprints (planning,
+Business Unit requirements into delivered features; established front-end coding standards and best-practices
+–  Worked in cross-functional teams with backend developers, QA engineers, and business stakeholders to translate
+through regression testing to catch defects before deployment.
+–  Developed unit tests with Jasmine and Karma covering Angular components and services, and validated releases
+and bar charts with click-through drill-down and Excel export.
+–  Developed audit trail dashboards and compliance reporting interfaces using Chart.js, including interactive pie
+Spanish, and Japanese with persisted user preference.
+–  Implemented internationalization (i18n) with ngx-translate supporting runtime language switching across English,
+----------------Page (1) Break----------------
