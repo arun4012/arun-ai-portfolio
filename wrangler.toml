@@ -1,6 +1,11 @@
 name = "arun-ai-portfolio"
+main = "worker/index.ts"
 compatibility_date = "2024-09-23"
-pages_build_output_dir = "./dist/arun-ai-portfolio/browser"
+
+[assets]
+directory = "./dist/arun-ai-portfolio/browser"
+binding = "ASSETS"
+not_found_handling = "single-page-application"
 
 [ai]
 binding = "AI"
