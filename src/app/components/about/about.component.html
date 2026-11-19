@@ -1,0 +1,92 @@
+<section id="about" class="bg-slate-900 py-24">
+  <div class="container mx-auto px-6 max-w-6xl">
+
+    <!-- Section Header -->
+    <div class="text-center mb-16">
+      <h2 class="text-4xl sm:text-5xl font-bold text-white">
+        About <span class="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Me</span>
+      </h2>
+      <div class="mt-4 mx-auto w-24 h-1 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500"></div>
+    </div>
+
+    <!-- Two Column Layout -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+
+      <!-- Left Column: Summary + Highlight Cards -->
+      <div class="flex flex-col gap-8">
+
+        <!-- Summary Paragraphs -->
+        <div class="flex flex-col gap-4 text-slate-400 text-base leading-relaxed">
+          <p>
+            {{ data.profile.summary }}
+          </p>
+          <p>
+            Passionate about crafting pixel-perfect, performant web applications, I bring a meticulous
+            approach to component architecture, reactive state management with RxJS, and modern CSS techniques
+            through Tailwind CSS. My work at TCS has sharpened my ability to deliver scalable solutions under
+            real-world enterprise constraints.
+          </p>
+        </div>
+
+        <!-- Highlight Cards Grid -->
+        <div class="grid grid-cols-2 gap-4">
+          @for (item of highlights; track item.label) {
+            <div class="flex items-start gap-3 p-4 rounded-xl bg-slate-800/60 border border-slate-700/50 hover:border-cyan-500/30 transition-colors">
+              <div class="flex-shrink-0 w-9 h-9 rounded-lg bg-cyan-500/10 flex items-center justify-center text-cyan-400">
+                <lucide-icon [img]="item.icon" [size]="18"></lucide-icon>
+              </div>
+              <div>
+                <p class="text-xs text-slate-500 uppercase tracking-wide">{{ item.label }}</p>
+                <p class="text-sm text-slate-200 font-medium mt-0.5">{{ item.value }}</p>
+              </div>
+            </div>
+          }
+        </div>
+
+      </div>
+
+      <!-- Right Column: Education + Mission -->
+      <div class="flex flex-col gap-6">
+
+        <!-- Education Card -->
+        <div class="rounded-2xl bg-slate-800/60 border border-slate-700/50 p-6">
+          <div class="flex items-center gap-3 mb-5">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-500/20 to-blue-500/20 flex items-center justify-center text-cyan-400 border border-cyan-500/20">
+              <lucide-icon [img]="GraduationCapIcon" [size]="20"></lucide-icon>
+            </div>
+            <h3 class="text-lg font-semibold text-white">Education</h3>
+          </div>
+
+            <div class="border-l-2 border-cyan-500/30 pl-4">
+              <p class="text-white font-semibold">{{ data.profile.education.degree }}</p>
+              <p class="text-cyan-400 text-sm mt-0.5">{{ data.profile.education.institution }}</p>
+              <div class="flex items-center gap-4 mt-1 text-slate-400 text-xs">
+                <span>{{ data.profile.education.year }}</span>
+                <span class="flex items-center gap-1">
+                  <span class="w-1 h-1 rounded-full bg-slate-600"></span>
+                  CGPA: {{ data.profile.education.cgpa }}
+                </span>
+              </div>
+            </div>
+        </div>
+
+        <!-- Mission / Quote Card -->
+        <div class="rounded-2xl bg-gradient-to-br from-cyan-500/5 to-blue-500/5 border border-cyan-500/20 p-6">
+          <div class="flex gap-3">
+            <span class="text-4xl text-cyan-500/40 font-serif leading-none select-none">&ldquo;</span>
+            <div>
+              <p class="text-slate-300 text-base leading-relaxed italic">
+                I believe great software is built at the intersection of clean code, thoughtful design,
+                and deep collaboration. My goal is to build Angular applications that not only work flawlessly
+                but inspire the people who use them.
+              </p>
+              <p class="mt-3 text-cyan-400 text-sm font-semibold">— {{ data.profile.name }}</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>

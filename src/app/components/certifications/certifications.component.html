@@ -1,0 +1,63 @@
+<section id="certifications" class="section-container">
+  <!-- Section Header -->
+  <div class="text-center mb-12">
+    <h2 class="text-3xl md:text-4xl font-bold text-white mb-3">
+      <span class="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Certifications</span>
+    </h2>
+    <p class="text-slate-400 text-lg max-w-xl mx-auto">
+      Professional credentials and ongoing learning
+    </p>
+  </div>
+
+  <!-- Certifications Grid -->
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    @for (cert of data.certifications; track cert.name) {
+      <div class="relative bg-slate-800/50 border border-slate-700/50 rounded-2xl p-6 flex flex-col gap-4 overflow-hidden hover:border-slate-600/60 transition-colors duration-200
+        @if (cert.status === 'completed') { border-l-4 border-l-green-500 } @else { border-l-4 border-l-amber-500 }">
+
+        <!-- Status Icon + Badge -->
+        <div class="flex items-start justify-between gap-3">
+          <div class="flex items-center justify-center w-10 h-10 rounded-xl shrink-0
+            {{ cert.status === 'completed' ? 'bg-green-500/10 text-green-400' : 'bg-amber-500/10 text-amber-400' }}">
+            @if (cert.status === 'completed') {
+              <lucide-icon [img]="CheckCircle2Icon" [size]="22"></lucide-icon>
+            } @else {
+              <lucide-icon [img]="ClockIcon" [size]="22"></lucide-icon>
+            }
+          </div>
+
+          @if (cert.status === 'in-progress') {
+            <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-semibold border bg-amber-500/10 border-amber-500/30 text-amber-400">
+              <lucide-icon [img]="ClockIcon" [size]="11"></lucide-icon>
+              In Progress
+            </span>
+          } @else {
+            <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-semibold border bg-green-500/10 border-green-500/30 text-green-400">
+              <lucide-icon [img]="CheckCircle2Icon" [size]="11"></lucide-icon>
+              Completed
+            </span>
+          }
+        </div>
+
+        <!-- Cert Info -->
+        <div class="flex flex-col gap-1 flex-1">
+          <h3 class="text-base font-semibold text-white leading-snug">{{ cert.name }}</h3>
+          <p class="text-sm font-medium text-slate-400">{{ cert.issuer }}</p>
+          <p class="text-sm text-slate-500 mt-1 leading-relaxed">{{ cert.description }}</p>
+        </div>
+
+        <!-- Credential Link -->
+        @if (cert.credentialUrl) {
+          <a
+            [href]="cert.credentialUrl"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-1.5 text-sm font-medium text-cyan-400 hover:text-cyan-300 transition-colors duration-150 group w-fit">
+            View Credential
+            <lucide-icon [img]="ExternalLinkIcon" [size]="14" class="group-hover:translate-x-0.5 transition-transform duration-150"></lucide-icon>
+          </a>
+        }
+      </div>
+    }
+  </div>
+</section>

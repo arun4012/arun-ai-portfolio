@@ -1,0 +1,183 @@
+<section id="projects" class="py-20 bg-slate-900/50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Section Header -->
+    <div class="text-center mb-16">
+      <div class="flex items-center justify-center gap-3 mb-4">
+        <lucide-icon [img]="Code2Icon" [size]="32" class="text-blue-400"></lucide-icon>
+        <h2 class="text-4xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+          Projects
+        </h2>
+      </div>
+      <p class="text-slate-400 text-lg max-w-2xl mx-auto">
+        Highlights of work delivered across enterprise and personal initiatives.
+      </p>
+      <div class="mt-4 h-1 w-24 mx-auto rounded-full bg-gradient-to-r from-blue-400 to-purple-500"></div>
+    </div>
+
+    <!-- Projects List -->
+    <div class="max-w-5xl mx-auto space-y-8">
+      @for (project of data.projects; track project.title; let i = $index) {
+        <div class="rounded-2xl border border-slate-700/60 bg-slate-800/60 backdrop-blur-sm overflow-hidden shadow-lg">
+
+          <div class="flex">
+            <!-- Left accent bar -->
+            <div class="w-1 flex-shrink-0"
+                 [ngClass]="project.type === 'professional'
+                   ? 'bg-gradient-to-b from-blue-400 to-purple-600'
+                   : 'bg-gradient-to-b from-emerald-400 to-teal-600'">
+            </div>
+
+            <div class="flex-1 p-6">
+              <!-- Header -->
+              <div class="flex flex-wrap items-start justify-between gap-4 mb-3">
+                <div class="flex-1 min-w-0">
+
+                  <!-- Title + badges row -->
+                  <div class="flex flex-wrap items-center gap-2 mb-2">
+                    <h3 class="text-xl font-bold text-white">{{ project.title }}</h3>
+
+                    @if (project.featured) {
+                      <span class="flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-semibold bg-amber-500/20 text-amber-400 border border-amber-500/40">
+                        <lucide-icon [img]="StarIcon" [size]="11"></lucide-icon>
+                        Featured
+                      </span>
+                    }
+
+                    <span class="px-2 py-0.5 rounded-full text-xs font-semibold border"
+                          [ngClass]="project.type === 'professional'
+                            ? 'bg-blue-500/20 text-blue-300 border-blue-500/40'
+                            : 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40'">
+                      @if (project.type === 'professional') {
+                        <span class="flex items-center gap-1">
+                          <lucide-icon [img]="BriefcaseIcon" [size]="11"></lucide-icon>
+                          Professional
+                        </span>
+                      } @else {
+                        <span class="flex items-center gap-1">
+                          <lucide-icon [img]="UserIcon" [size]="11"></lucide-icon>
+                          Personal
+                        </span>
+                      }
+                    </span>
+                  </div>
+
+                  <!-- Meta -->
+                  <div class="flex flex-wrap gap-4 text-sm text-slate-400">
+                    @if (project.role) {
+                      <span class="flex items-center gap-1">
+                        <lucide-icon [img]="LayersIcon" [size]="13" class="text-purple-400 flex-shrink-0"></lucide-icon>
+                        {{ project.role }}
+                      </span>
+                    }
+                    @if (project.company) {
+                      <span class="flex items-center gap-1">
+                        <lucide-icon [img]="BriefcaseIcon" [size]="13" class="text-blue-400 flex-shrink-0"></lucide-icon>
+                        {{ project.company }}
+                      </span>
+                    }
+                    @if (project.client) {
+                      <span class="flex items-center gap-1">
+                        <lucide-icon [img]="UserIcon" [size]="13" class="text-cyan-400 flex-shrink-0"></lucide-icon>
+                        Client: {{ project.client }}
+                      </span>
+                    }
+                    @if (project.duration) {
+                      <span class="text-slate-500">{{ project.duration }}</span>
+                    }
+                  </div>
+                </div>
+              </div>
+
+              <!-- Description -->
+              @if (project.description) {
+                <p class="text-slate-300 leading-relaxed mb-4">{{ project.description }}</p>
+              }
+
+              <!-- Toggle -->
+              <button (click)="toggleExpand(i)"
+                      class="flex items-center gap-1 text-sm text-blue-400 hover:text-blue-300 transition-colors focus:outline-none">
+                @if (expandedIndex === i) {
+                  <lucide-icon [img]="ChevronUpIcon" [size]="16"></lucide-icon>
+                  <span>Hide Details</span>
+                } @else {
+                  <lucide-icon [img]="ChevronDownIcon" [size]="16"></lucide-icon>
+                  <span>Show Details</span>
+                }
+              </button>
+
+              <!-- Expandable -->
+              @if (expandedIndex === i) {
+                <div class="mt-5 space-y-6 border-t border-slate-700/60 pt-5">
+
+                  @if (project.businessContext) {
+                    <div>
+                      <h4 class="text-sm font-semibold text-slate-200 uppercase tracking-wider mb-2">Business Context</h4>
+                      <p class="text-slate-300 leading-relaxed text-sm">{{ project.businessContext }}</p>
+                    </div>
+                  }
+
+                  @if (project.challenges && project.challenges.length > 0) {
+                    <div>
+                      <h4 class="flex items-center gap-2 text-sm font-semibold text-slate-200 uppercase tracking-wider mb-3">
+                        <lucide-icon [img]="LightbulbIcon" [size]="15" class="text-yellow-400"></lucide-icon>
+                        Challenges &amp; Solutions
+                      </h4>
+                      <div class="space-y-4">
+                        @for (item of project.challenges; track item.challenge) {
+                          <div class="rounded-xl bg-slate-700/40 border border-slate-600/40 p-4 space-y-2">
+                            <p class="text-sm font-medium text-slate-200">
+                              <span class="text-rose-400 font-semibold">Challenge: </span>{{ item.challenge }}
+                            </p>
+                            <p class="text-sm text-slate-300 flex items-start gap-2">
+                              <lucide-icon [img]="LightbulbIcon" [size]="14" class="text-yellow-400 mt-0.5 flex-shrink-0"></lucide-icon>
+                              <span><span class="text-yellow-400 font-semibold">Solution: </span>{{ item.solution }}</span>
+                            </p>
+                          </div>
+                        }
+                      </div>
+                    </div>
+                  }
+
+                  @if (project.outcomes && project.outcomes.length > 0) {
+                    <div>
+                      <h4 class="flex items-center gap-2 text-sm font-semibold text-slate-200 uppercase tracking-wider mb-3">
+                        <lucide-icon [img]="TrophyIcon" [size]="15" class="text-amber-400"></lucide-icon>
+                        Outcomes
+                      </h4>
+                      <ul class="space-y-2">
+                        @for (outcome of project.outcomes; track outcome) {
+                          <li class="flex items-start gap-2 text-sm text-slate-300">
+                            <lucide-icon [img]="TrophyIcon" [size]="14" class="text-amber-400 mt-0.5 flex-shrink-0"></lucide-icon>
+                            <span>{{ outcome }}</span>
+                          </li>
+                        }
+                      </ul>
+                    </div>
+                  }
+
+                  @if (project.technologies && project.technologies.length > 0) {
+                    <div>
+                      <h4 class="text-sm font-semibold text-slate-200 uppercase tracking-wider mb-3">Technologies</h4>
+                      <div class="flex flex-wrap gap-2">
+                        @for (tech of project.technologies; track tech) {
+                          <span class="px-3 py-1 rounded-full text-xs font-medium bg-blue-500/10 text-blue-300 border border-blue-500/30 hover:bg-blue-500/20 transition-colors">
+                            {{ tech }}
+                          </span>
+                        }
+                      </div>
+                    </div>
+                  }
+
+                </div>
+              }
+
+            </div>
+          </div>
+
+        </div>
+      }
+    </div>
+
+  </div>
+</section>

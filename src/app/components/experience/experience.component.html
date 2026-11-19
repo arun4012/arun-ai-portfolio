@@ -1,0 +1,170 @@
+<section id="experience" class="section-container py-20">
+  <!-- Section Header -->
+  <div class="text-center mb-16">
+    <div class="flex items-center justify-center gap-3 mb-4">
+      <lucide-icon [img]="BriefcaseIcon" [size]="32" class="text-cyan-400"></lucide-icon>
+      <h2 class="text-4xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+        Professional Experience
+      </h2>
+    </div>
+    <p class="text-slate-400 text-lg max-w-2xl mx-auto">
+      A journey through impactful roles, meaningful projects, and continuous growth.
+    </p>
+    <div class="mt-4 h-1 w-24 mx-auto rounded-full bg-gradient-to-r from-cyan-400 to-blue-500"></div>
+  </div>
+
+  <!-- Timeline -->
+  <div class="relative max-w-4xl mx-auto">
+    @for (exp of data.experiences; track exp.role; let i = $index) {
+      <div class="relative pl-14 mb-10">
+        <!-- Timeline dot -->
+        <div class="absolute left-4 top-6 w-4 h-4 rounded-full bg-gradient-to-br from-cyan-400 to-blue-500 shadow-lg shadow-cyan-500/40 z-10"></div>
+
+        <!-- Timeline vertical line (not last) -->
+        @if (i < data.experiences.length - 1) {
+          <div class="timeline-line"></div>
+        }
+
+        <!-- Card -->
+        <div class="rounded-2xl border border-slate-700/60 bg-slate-800/60 backdrop-blur-sm overflow-hidden shadow-lg hover:shadow-cyan-500/10 transition-shadow duration-300">
+
+          <!-- Left border accent -->
+          <div class="flex">
+            <div class="w-1 flex-shrink-0 bg-gradient-to-b from-cyan-400 to-blue-600 rounded-l-2xl"></div>
+
+            <div class="flex-1 p-6">
+              <!-- Card Header -->
+              <div class="flex flex-wrap items-start justify-between gap-4">
+                <div class="flex-1 min-w-0">
+                  <div class="flex flex-wrap items-center gap-2 mb-1">
+                    <h3 class="text-xl font-bold text-white">{{ exp.role }}</h3>
+                    @if (exp.duration && exp.duration.toLowerCase().includes('present')) {
+                      <span class="px-2 py-0.5 rounded-full text-xs font-semibold bg-green-500/20 text-green-400 border border-green-500/40">
+                        Current
+                      </span>
+                    }
+                  </div>
+
+                  <div class="flex flex-wrap gap-4 text-sm text-slate-400 mt-1">
+                    @if (exp.company) {
+                      <span class="flex items-center gap-1">
+                        <lucide-icon [img]="Building2Icon" [size]="14" class="text-cyan-400 flex-shrink-0"></lucide-icon>
+                        {{ exp.company }}
+                      </span>
+                    }
+                    @if (exp.client) {
+                      <span class="flex items-center gap-1">
+                        <lucide-icon [img]="BriefcaseIcon" [size]="14" class="text-blue-400 flex-shrink-0"></lucide-icon>
+                        Client: {{ exp.client }}
+                      </span>
+                    }
+                    @if (exp.project) {
+                      <span class="flex items-center gap-1 text-slate-300">
+                        <lucide-icon [img]="BriefcaseIcon" [size]="14" class="text-purple-400 flex-shrink-0"></lucide-icon>
+                        {{ exp.project }}
+                      </span>
+                    }
+                    @if (exp.location) {
+                      <span class="flex items-center gap-1">
+                        <lucide-icon [img]="MapPinIcon" [size]="14" class="text-rose-400 flex-shrink-0"></lucide-icon>
+                        {{ exp.location }}
+                      </span>
+                    }
+                  </div>
+                </div>
+
+                <div class="flex flex-col items-end gap-2 flex-shrink-0">
+                  @if (exp.duration) {
+                    <span class="flex items-center gap-1 px-3 py-1 rounded-full text-sm bg-slate-700 text-slate-300 border border-slate-600">
+                      <lucide-icon [img]="CalendarIcon" [size]="13" class="text-cyan-400"></lucide-icon>
+                      {{ exp.duration }}
+                    </span>
+                  }
+                </div>
+              </div>
+
+              <!-- Toggle Button -->
+              <button
+                (click)="toggleExpand(i)"
+                class="mt-4 flex items-center gap-1 text-sm text-cyan-400 hover:text-cyan-300 transition-colors focus:outline-none"
+                [attr.aria-expanded]="expandedIndex === i"
+              >
+                @if (expandedIndex === i) {
+                  <lucide-icon [img]="ChevronUpIcon" [size]="16"></lucide-icon>
+                  <span>Hide Details</span>
+                } @else {
+                  <lucide-icon [img]="ChevronDownIcon" [size]="16"></lucide-icon>
+                  <span>Show Details</span>
+                }
+              </button>
+
+              <!-- Expandable Body -->
+              @if (expandedIndex === i) {
+                <div class="mt-5 space-y-5 border-t border-slate-700/60 pt-5 animate-fade-in">
+
+                  <!-- Description -->
+                  @if (exp.description) {
+                    <p class="text-slate-300 leading-relaxed">{{ exp.description }}</p>
+                  }
+
+                  <!-- Responsibilities & Achievements -->
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Responsibilities -->
+                    @if (exp.responsibilities && exp.responsibilities.length > 0) {
+                      <div>
+                        <h4 class="flex items-center gap-2 text-sm font-semibold text-slate-200 uppercase tracking-wider mb-3">
+                          <lucide-icon [img]="CheckCircle2Icon" [size]="15" class="text-cyan-400"></lucide-icon>
+                          Responsibilities
+                        </h4>
+                        <ul class="space-y-2">
+                          @for (item of exp.responsibilities; track item) {
+                            <li class="flex items-start gap-2 text-sm text-slate-300">
+                              <lucide-icon [img]="CheckCircle2Icon" [size]="14" class="text-cyan-400 mt-0.5 flex-shrink-0"></lucide-icon>
+                              <span>{{ item }}</span>
+                            </li>
+                          }
+                        </ul>
+                      </div>
+                    }
+
+                    <!-- Key Achievements -->
+                    @if (exp.achievements && exp.achievements.length > 0) {
+                      <div>
+                        <h4 class="flex items-center gap-2 text-sm font-semibold text-slate-200 uppercase tracking-wider mb-3">
+                          <lucide-icon [img]="TrophyIcon" [size]="15" class="text-amber-400"></lucide-icon>
+                          Key Achievements
+                        </h4>
+                        <ul class="space-y-2">
+                          @for (item of exp.achievements; track item) {
+                            <li class="flex items-start gap-2 text-sm text-slate-300">
+                              <lucide-icon [img]="TrophyIcon" [size]="14" class="text-amber-400 mt-0.5 flex-shrink-0"></lucide-icon>
+                              <span>{{ item }}</span>
+                            </li>
+                          }
+                        </ul>
+                      </div>
+                    }
+                  </div>
+
+                  <!-- Technologies -->
+                  @if (exp.technologies && exp.technologies.length > 0) {
+                    <div>
+                      <h4 class="text-sm font-semibold text-slate-200 uppercase tracking-wider mb-3">Technologies</h4>
+                      <div class="flex flex-wrap gap-2">
+                        @for (tech of exp.technologies; track tech) {
+                          <span class="px-3 py-1 rounded-full text-xs font-medium bg-cyan-500/10 text-cyan-300 border border-cyan-500/30 hover:bg-cyan-500/20 transition-colors">
+                            {{ tech }}
+                          </span>
+                        }
+                      </div>
+                    </div>
+                  }
+                </div>
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</section>

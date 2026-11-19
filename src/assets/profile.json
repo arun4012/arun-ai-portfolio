@@ -1,0 +1,28 @@
+{
+  "name": "Arun A.",
+  "fullName": "Arun Arivalagan",
+  "currentCompany": "Tata Consultancy Services (TCS)",
+  "currentRole": "System Engineer",
+  "primarySpecialization": "Angular Development",
+  "designation": "System Engineer / Angular Developer",
+  "phone": "+91 9361483484",
+  "email": "arunariraja@gmail.com",
+  "linkedin": "https://linkedin.com/in/arunarivalagan",
+  "github": "https://github.com/arunarivalagan",
+  "location": "Salem, India",
+  "experienceYears": "3+",
+  "joiningDate": "July 2023",
+  "client": "Prudential Finance",
+  "project": "ECM – Documentum Modernization",
+  "noticePeriod": "90 days",
+  "availability": "Available after notice period",
+  "education": {
+    "degree": "B.E. Electronics and Communication Engineering",
+    "institution": "M. Kumarasamy College of Engineering, Karur",
+    "year": "2019 – 2023",
+    "cgpa": "8.8 / 10 (Distinction)"
+  },
+  "summary": "Software Engineer with 3+ years of experience building enterprise Angular applications in the insurance and financial services domain. Experienced in migrating legacy .NET front-ends to Angular, component-driven architecture, RxJS-based state management, REST API integration, and responsive UI development with Angular Material and Bootstrap.",
+  "lastUpdated": "2026-11-19"
+}
+

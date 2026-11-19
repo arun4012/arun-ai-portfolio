@@ -1,0 +1,75 @@
+<nav
+  class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+  [ngClass]="{
+    'bg-slate-900/95 backdrop-blur-md shadow-lg': isScrolled,
+    'bg-transparent': !isScrolled
+  }"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <!-- Logo -->
+      <a
+        (click)="scrollTo('#hero')"
+        class="text-xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent cursor-pointer hover:opacity-80 transition-opacity"
+      >
+        {{ data.profile.name }}
+      </a>
+
+      <!-- Desktop Nav -->
+      <div class="hidden md:flex items-center space-x-1">
+        @for (link of navLinks; track link.href) {
+          <a
+            (click)="scrollTo(link.href)"
+            class="px-3 py-2 text-sm text-slate-300 hover:text-cyan-400 transition-colors cursor-pointer rounded-lg hover:bg-slate-800/50"
+          >
+            {{ link.label }}
+          </a>
+        }
+        <a
+          href="assets/Arun_Angular_Profile.pdf"
+          download
+          class="ml-3 inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-slate-900 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-lg hover:from-cyan-300 hover:to-blue-400 transition-all"
+        >
+          <lucide-icon [img]="DownloadIcon" [size]="16"></lucide-icon>
+          Resume
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button
+        (click)="toggleMobileMenu()"
+        class="md:hidden p-2 text-slate-300 hover:text-white rounded-lg hover:bg-slate-800"
+      >
+        @if (isMobileMenuOpen) {
+          <lucide-icon [img]="XIcon" [size]="24"></lucide-icon>
+        } @else {
+          <lucide-icon [img]="MenuIcon" [size]="24"></lucide-icon>
+        }
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    @if (isMobileMenuOpen) {
+      <div class="md:hidden pb-4 border-t border-slate-700/50">
+        <div class="flex flex-col space-y-1 pt-3">
+          @for (link of navLinks; track link.href) {
+            <a
+              (click)="scrollTo(link.href)"
+              class="px-3 py-2 text-sm text-slate-300 hover:text-cyan-400 hover:bg-slate-800/50 rounded-lg transition-colors cursor-pointer"
+            >
+              {{ link.label }}
+            </a>
+          }
+          <a
+            href="assets/Arun_Angular_Profile.pdf"
+            download
+            class="mx-3 mt-2 inline-flex items-center justify-center gap-2 px-4 py-2 text-sm font-medium text-slate-900 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-lg"
+          >
+            <lucide-icon [img]="DownloadIcon" [size]="16"></lucide-icon>
+            Download Resume
+          </a>
+        </div>
+      </div>
+    }
+  </div>
+</nav>

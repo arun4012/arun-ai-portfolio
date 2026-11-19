@@ -1,0 +1,182 @@
+<!-- Floating Chat Button -->
+<button
+  (click)="toggleChat()"
+  class="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600
+         shadow-lg shadow-cyan-500/30 flex items-center justify-center hover:scale-110 transition-transform
+         focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2 focus:ring-offset-slate-950"
+  [attr.aria-label]="isOpen ? 'Close chat' : 'Open AI assistant'"
+>
+  @if (isOpen) {
+    <lucide-icon [img]="XIcon" [size]="24" class="text-white"></lucide-icon>
+  } @else {
+    <lucide-icon [img]="MessageCircleIcon" [size]="24" class="text-white"></lucide-icon>
+  }
+</button>
+
+<!-- Notification dot when closed -->
+@if (!isOpen) {
+  <div class="fixed bottom-[72px] right-6 z-50 w-5 h-5 rounded-full bg-green-400 border-2 border-slate-950
+              flex items-center justify-center">
+    <lucide-icon [img]="SparklesIcon" [size]="10" class="text-slate-900"></lucide-icon>
+  </div>
+}
+
+<!-- Chat Window -->
+@if (isOpen) {
+  <div class="fixed bottom-24 right-6 z-50 w-[380px] max-w-[calc(100vw-24px)] h-[550px] max-h-[calc(100vh-120px)]
+              flex flex-col bg-slate-900 border border-slate-700/70 rounded-2xl shadow-2xl shadow-black/50
+              overflow-hidden">
+
+    <!-- Header -->
+    <div class="flex items-center justify-between px-4 py-3 bg-gradient-to-r from-cyan-900/50 to-blue-900/50
+                border-b border-slate-700/50">
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center">
+          <lucide-icon [img]="BotIcon" [size]="18" class="text-white"></lucide-icon>
+        </div>
+        <div>
+          <p class="text-sm font-semibold text-slate-100">Arun's AI Assistant</p>
+          <div class="flex items-center gap-1.5">
+            <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+            <span class="text-xs text-slate-400">Powered by RAG + Workers AI</span>
+          </div>
+        </div>
+      </div>
+      <div class="flex items-center gap-1">
+        <button
+          (click)="clearConversation()"
+          class="p-1.5 text-slate-400 hover:text-red-400 hover:bg-slate-800 rounded-lg transition-colors"
+          title="Clear conversation"
+        >
+          <lucide-icon [img]="Trash2Icon" [size]="16"></lucide-icon>
+        </button>
+        <button
+          (click)="closeChat()"
+          class="p-1.5 text-slate-400 hover:text-slate-200 hover:bg-slate-800 rounded-lg transition-colors"
+        >
+          <lucide-icon [img]="XIcon" [size]="16"></lucide-icon>
+        </button>
+      </div>
+    </div>
+
+    <!-- Messages -->
+    <div
+      #messagesContainer
+      class="flex-1 overflow-y-auto p-4 space-y-4 scroll-smooth"
+    >
+      @for (message of messages; track trackByIndex($index)) {
+        <div
+          class="flex gap-3"
+          [class.flex-row-reverse]="message.role === 'user'"
+        >
+          <!-- Avatar -->
+          <div
+            class="w-8 h-8 rounded-full flex-shrink-0 flex items-center justify-center text-xs"
+            [class.bg-gradient-to-br]="message.role === 'assistant'"
+            [class.from-cyan-500]="message.role === 'assistant'"
+            [class.to-blue-600]="message.role === 'assistant'"
+            [class.bg-slate-700]="message.role === 'user'"
+          >
+            @if (message.role === 'assistant') {
+              <lucide-icon [img]="BotIcon" [size]="16" class="text-white"></lucide-icon>
+            } @else {
+              <lucide-icon [img]="UserIcon" [size]="16" class="text-slate-300"></lucide-icon>
+            }
+          </div>
+
+          <!-- Bubble -->
+          <div class="max-w-[80%]">
+            @if (message.isLoading) {
+              <div class="bg-slate-800 rounded-2xl rounded-tl-sm px-4 py-3">
+                <div class="flex items-center gap-2 text-slate-400">
+                  <div class="flex gap-1">
+                    <span class="w-2 h-2 bg-cyan-500 rounded-full animate-bounce" style="animation-delay:0ms"></span>
+                    <span class="w-2 h-2 bg-cyan-500 rounded-full animate-bounce" style="animation-delay:150ms"></span>
+                    <span class="w-2 h-2 bg-cyan-500 rounded-full animate-bounce" style="animation-delay:300ms"></span>
+                  </div>
+                  <span class="text-xs">Thinking…</span>
+                </div>
+              </div>
+            } @else {
+              <div
+                class="rounded-2xl px-4 py-3 text-sm leading-relaxed"
+                [class.bg-slate-800]="message.role === 'assistant'"
+                [class.rounded-tl-sm]="message.role === 'assistant'"
+                [class.text-slate-200]="message.role === 'assistant'"
+                [class.bg-gradient-to-br]="message.role === 'user'"
+                [class.from-cyan-600]="message.role === 'user'"
+                [class.to-blue-700]="message.role === 'user'"
+                [class.rounded-tr-sm]="message.role === 'user'"
+                [class.text-white]="message.role === 'user'"
+                [ngClass]="message.isError ? 'border border-red-400' : ''"
+              >
+                {{ message.content }}
+              </div>
+
+              <!-- Sources -->
+              @if (message.sources && message.sources.length > 0) {
+                <div class="mt-1 flex flex-wrap gap-1">
+                  @for (source of message.sources; track source) {
+                    <span class="inline-flex items-center px-2 py-0.5 rounded text-xs bg-slate-700/50
+                                 text-slate-400 border border-slate-600/50">
+                      {{ source }}
+                    </span>
+                  }
+                </div>
+              }
+            }
+          </div>
+        </div>
+      }
+    </div>
+
+    <!-- Suggested Questions (only before first user message) -->
+    @if (messages.length <= 1) {
+      <div class="px-4 py-2 border-t border-slate-700/50">
+        <p class="text-xs text-slate-500 mb-2">Suggested questions:</p>
+        <div class="flex flex-wrap gap-1.5">
+          @for (q of data.suggestedQuestions.slice(0, 4); track q.text) {
+            <button
+              (click)="askSuggestedQuestion(q.text)"
+              class="text-xs px-2.5 py-1 rounded-full bg-slate-800 border border-slate-700
+                     text-slate-300 hover:border-cyan-500/40 hover:text-cyan-400 transition-colors"
+            >
+              {{ q.text }}
+            </button>
+          }
+        </div>
+      </div>
+    }
+
+    <!-- Input -->
+    <div class="px-3 py-3 border-t border-slate-700/50 bg-slate-900">
+      <div class="flex items-end gap-2">
+        <textarea
+          #inputField
+          [(ngModel)]="userInput"
+          (keydown)="onKeyDown($event)"
+          placeholder="Ask about Arun's experience, skills, projects…"
+          rows="1"
+          maxlength="500"
+          class="flex-1 bg-slate-800 text-slate-200 placeholder-slate-500 text-sm rounded-xl px-3 py-2.5
+                 border border-slate-700 focus:border-cyan-500/50 focus:outline-none resize-none
+                 max-h-24 overflow-y-auto"
+          [disabled]="isLoading"
+        ></textarea>
+        <button
+          (click)="sendMessage()"
+          [disabled]="!userInput.trim() || isLoading"
+          class="flex-shrink-0 w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600
+                 flex items-center justify-center hover:from-cyan-400 hover:to-blue-500 transition-all
+                 disabled:opacity-40 disabled:cursor-not-allowed"
+        >
+          <lucide-icon [img]="SendIcon" [size]="18" class="text-white"></lucide-icon>
+        </button>
+      </div>
+      <p class="text-xs text-slate-600 mt-1 text-center">
+        AI responses are based on verified portfolio information
+      </p>
+    </div>
+  </div>
+}
+

@@ -1,0 +1,59 @@
+<footer class="bg-slate-950 border-t border-slate-800">
+
+  <!-- Top divider glow -->
+  <div class="h-px w-full bg-gradient-to-r from-transparent via-cyan-500/30 to-transparent"></div>
+
+  <div class="container mx-auto px-6 py-10 max-w-6xl">
+
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-6">
+
+      <!-- Brand / Name -->
+      <div class="flex flex-col items-center sm:items-start gap-1">
+        <span class="text-xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+          {{ data.profile.name }}
+        </span>
+        <span class="text-xs text-slate-500">Angular Developer · Front-End Engineer</span>
+      </div>
+
+      <!-- Social Icon Links -->
+      <div class="flex items-center gap-3">
+
+        <a [href]="data.profile.github" target="_blank" rel="noopener" aria-label="GitHub"
+           class="flex items-center justify-center w-10 h-10 rounded-full bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-white border border-slate-700/50 hover:border-cyan-500/30 transition-all">
+          <lucide-icon [img]="GithubIcon" [size]="18"></lucide-icon>
+        </a>
+
+        <a [href]="data.profile.linkedin" target="_blank" rel="noopener" aria-label="LinkedIn"
+           class="flex items-center justify-center w-10 h-10 rounded-full bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-blue-400 border border-slate-700/50 hover:border-blue-500/30 transition-all">
+          <lucide-icon [img]="LinkedinIcon" [size]="18"></lucide-icon>
+        </a>
+
+        <a href="mailto:{{ data.profile.email }}" aria-label="Email"
+           class="flex items-center justify-center w-10 h-10 rounded-full bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-cyan-400 border border-slate-700/50 hover:border-cyan-500/30 transition-all">
+          <lucide-icon [img]="MailIcon" [size]="18"></lucide-icon>
+        </a>
+
+      </div>
+
+    </div>
+
+    <!-- Divider -->
+    <div class="mt-8 pt-6 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500">
+
+      <!-- Copyright -->
+      <span>
+        &copy; {{ currentYear }} {{ data.profile.name }} &middot; Built with Angular &amp; Cloudflare &middot; Powered by AI
+      </span>
+
+      <!-- Built with love -->
+      <span class="flex items-center gap-1">
+        Built with
+        <lucide-icon [img]="HeartIcon" [size]="12" class="text-red-500 fill-red-500"></lucide-icon>
+        and lots of coffee
+      </span>
+
+    </div>
+
+  </div>
+
+</footer>
