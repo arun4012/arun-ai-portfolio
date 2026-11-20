@@ -216,9 +216,11 @@ async function handleChat(request: Request, env: Env): Promise<Response> {
     });
   }
 
+  let question = '';
+
   try {
     const body = (await request.json()) as ChatRequest;
-    const question = (body.question || '').trim().slice(0, 500);
+    question = (body.question || '').trim().slice(0, 500);
     const history = (body.history || []).slice(-4);
 
     if (!question) {
@@ -280,7 +282,7 @@ async function handleChat(request: Request, env: Env): Promise<Response> {
             answer = candidateAnswer.trim();
             break;
           }
-        } catch (modelErr) {
+        } catch (modelErr: any) {
           console.warn(`Model ${model} failed or timed out:`, modelErr);
         }
       }
@@ -307,12 +309,12 @@ async function handleChat(request: Request, env: Env): Promise<Response> {
     );
   } catch (error: any) {
     console.error('Chat worker error:', error);
-    // Even on total exception, return accurate fallback rather than breaking the chat
-    const fallback = getDeterministicFallbackAnswer('general');
+    const fallback = getDeterministicFallbackAnswer(question || 'general');
     return new Response(
       JSON.stringify({
         answer: fallback.answer,
-        sources: ['profile'],
+        sources: fallback.sources || ['profile'],
+        debugError: error?.message || String(error),
       }),
       {
         status: 200,
