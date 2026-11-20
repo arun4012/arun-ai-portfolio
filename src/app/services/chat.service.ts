@@ -7,7 +7,7 @@ import { ChatMessage, ChatResponse } from '../models/portfolio.models';
 @Injectable({ providedIn: 'root' })
 export class ChatService {
   private readonly apiUrl = '/api/chat';
-  private readonly timeoutMs = 20000;
+  private readonly timeoutMs = 45000;
 
   constructor(private http: HttpClient) {}
 
