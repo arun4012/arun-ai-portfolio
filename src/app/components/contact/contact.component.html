@@ -42,6 +42,35 @@
               {{ link.value }}
             </p>
           </div>
+
+          <!-- Quick Action Buttons for Email on Desktop -->
+          @if (link.icon === 'mail') {
+            <div class="flex items-center gap-1.5 shrink-0" (click)="$event.stopPropagation()">
+              <button
+                type="button"
+                (click)="copyEmail($event)"
+                class="px-2.5 py-1.5 rounded-lg text-xs font-medium border transition-all cursor-pointer flex items-center gap-1"
+                [ngClass]="copied ? 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30' : 'bg-slate-700/60 hover:bg-slate-700 text-slate-300 hover:text-white border-slate-600/50'"
+                title="Copy Email Address">
+                @if (copied) {
+                  <lucide-icon [img]="CheckIcon" [size]="14"></lucide-icon>
+                  Copied!
+                } @else {
+                  <lucide-icon [img]="CopyIcon" [size]="14"></lucide-icon>
+                  Copy
+                }
+              </button>
+
+              <button
+                type="button"
+                (click)="openGmail($event)"
+                class="px-2.5 py-1.5 rounded-lg text-xs font-medium bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 transition-all cursor-pointer flex items-center gap-1"
+                title="Open in Gmail">
+                <span>Gmail</span>
+                <lucide-icon [img]="ExternalLinkIcon" [size]="12"></lucide-icon>
+              </button>
+            </div>
+          }
         </a>
       }
 

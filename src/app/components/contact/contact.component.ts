@@ -1,12 +1,25 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { LucideAngularModule, Mail, Phone, Linkedin, Github, Download, MapPin, Clock, Send } from 'lucide-angular';
+import { CommonModule, NgClass } from '@angular/common';
+import {
+  LucideAngularModule,
+  Mail,
+  Phone,
+  Linkedin,
+  Github,
+  Download,
+  MapPin,
+  Clock,
+  Send,
+  Copy,
+  Check,
+  ExternalLink,
+} from 'lucide-angular';
 import { PortfolioDataService } from '../../services/portfolio-data.service';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [CommonModule, LucideAngularModule],
+  imports: [CommonModule, NgClass, LucideAngularModule],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.css',
 })
@@ -19,6 +32,11 @@ export class ContactComponent {
   readonly MapPinIcon = MapPin;
   readonly ClockIcon = Clock;
   readonly SendIcon = Send;
+  readonly CopyIcon = Copy;
+  readonly CheckIcon = Check;
+  readonly ExternalLinkIcon = ExternalLink;
+
+  copied = false;
 
   constructor(public data: PortfolioDataService) {}
 
@@ -45,5 +63,27 @@ export class ContactComponent {
       description: 'View my code',
     },
   ];
-}
 
+  copyEmail(event?: MouseEvent) {
+    if (event) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+    if (navigator?.clipboard) {
+      navigator.clipboard.writeText(this.data.profile.email);
+    }
+    this.copied = true;
+    setTimeout(() => {
+      this.copied = false;
+    }, 2500);
+  }
+
+  openGmail(event?: MouseEvent) {
+    if (event) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+    const url = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(this.data.profile.email)}`;
+    window.open(url, '_blank', 'noopener,noreferrer');
+  }
+}
