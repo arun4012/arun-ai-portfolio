@@ -55,6 +55,18 @@ export interface Experience {
   technologies: string[];
 }
 
+export interface ProjectPromptPrinciple {
+  title: string;
+  badge: string;
+  description: string;
+}
+
+export interface ProjectPromptArchitecture {
+  summary: string;
+  principles: ProjectPromptPrinciple[];
+  promptTemplate?: string;
+}
+
 export interface Project {
   title: string;
   type: 'professional' | 'personal';
@@ -69,6 +81,7 @@ export interface Project {
   challenges: { challenge: string; solution: string }[];
   outcomes: string[];
   featured?: boolean;
+  promptArchitecture?: ProjectPromptArchitecture;
 }
 
 export interface Certification {

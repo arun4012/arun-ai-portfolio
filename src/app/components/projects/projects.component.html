@@ -169,6 +169,62 @@
                     </div>
                   }
 
+                  @if (project.promptArchitecture) {
+                    <div class="rounded-xl bg-gradient-to-br from-purple-950/40 via-slate-800/60 to-blue-950/40 border border-purple-500/30 p-4 sm:p-5 space-y-4">
+                      <div class="flex flex-wrap items-center justify-between gap-2">
+                        <div class="flex items-center gap-2">
+                          <span class="p-1.5 rounded-lg bg-purple-500/20 text-purple-400 border border-purple-500/40">
+                            <lucide-icon [img]="SparklesIcon" [size]="16"></lucide-icon>
+                          </span>
+                          <h4 class="text-sm font-bold text-white tracking-wide">
+                            Prompt Engineering &amp; Architecture Showcase
+                          </h4>
+                        </div>
+                        <span class="px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-cyan-500/10 text-cyan-300 border border-cyan-500/30">
+                          Claude Code &amp; Workers AI
+                        </span>
+                      </div>
+
+                      <p class="text-sm text-slate-300 leading-relaxed">
+                        {{ project.promptArchitecture.summary }}
+                      </p>
+
+                      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+                        @for (principle of project.promptArchitecture.principles; track principle.title) {
+                          <div class="rounded-lg bg-slate-800/80 border border-slate-700/60 p-3 space-y-1.5">
+                            <div class="flex items-center justify-between gap-2">
+                              <span class="text-xs font-semibold text-white">{{ principle.title }}</span>
+                              <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-purple-500/10 text-purple-300 border border-purple-500/30">
+                                {{ principle.badge }}
+                              </span>
+                            </div>
+                            <p class="text-xs text-slate-400 leading-relaxed">
+                              {{ principle.description }}
+                            </p>
+                          </div>
+                        }
+                      </div>
+
+                      @if (project.promptArchitecture.promptTemplate) {
+                        <div class="pt-2">
+                          <button
+                            type="button"
+                            (click)="togglePromptTemplate(i)"
+                            class="inline-flex items-center gap-1.5 text-xs font-semibold text-purple-400 hover:text-purple-300 transition-colors focus:outline-none">
+                            <lucide-icon [img]="TerminalIcon" [size]="14"></lucide-icon>
+                            <span>{{ showPromptTemplate[i] ? 'Hide Live System Prompt Pattern' : 'Inspect Live System Prompt Pattern' }}</span>
+                          </button>
+
+                          @if (showPromptTemplate[i]) {
+                            <div class="mt-2.5 rounded-lg bg-slate-950/90 border border-slate-800 p-3 text-[11px] font-mono text-slate-300 whitespace-pre-wrap leading-relaxed overflow-x-auto">
+                              {{ project.promptArchitecture.promptTemplate }}
+                            </div>
+                          }
+                        </div>
+                      }
+                    </div>
+                  }
+
                 </div>
               }
 

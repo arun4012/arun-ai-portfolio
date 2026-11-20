@@ -51,6 +51,7 @@ const STRUCTURED_PROFILE = {
   github: 'https://github.com/arun4012',
   education: 'B.E. Electronics and Communication Engineering, M. Kumarasamy College of Engineering, Karur (2019–2023), CGPA: 8.8/10 (First Class with Distinction)',
   certifications: [
+    'Claude Certified Associate - Foundation (Anthropic)',
     'Kubernetes and Cloud Native Associate (KCNA) - Cloud Native Computing Foundation (CNCF)',
     'Prompt Engineering for Generative AI - Udemy',
     'AWS Certified Solutions Architect Associate (SAA-C03) - Currently in progress'
@@ -59,6 +60,7 @@ const STRUCTURED_PROFILE = {
     'Angular (15–21)',
     'TypeScript & JavaScript (ES6+)',
     'RxJS & State Management',
+    'Claude Code & Prompt Engineering',
     'Angular Material & Angular CDK',
     'REST API Integration & HttpClient',
     'HTML5, SCSS & Tailwind CSS',
@@ -152,8 +154,20 @@ function getDeterministicFallbackAnswer(question: string): { answer: string; sou
         `• **Reactive Programming:** RxJS (Observables, Subjects, custom operators), Service-based State Management\n` +
         `• **API & Architecture:** RESTful APIs, HttpClient, Modular & Reusable Component Architecture\n` +
         `• **Cloud & DevOps:** Kubernetes (KCNA Certified), Azure DevOps CI/CD, Git & GitHub\n` +
-        `• **AI Engineering:** Prompt Engineering, Generative AI Application Development (RAG pipelines)`,
-      sources: ['skills', 'experience']
+        `• **AI & Prompt Engineering:** Claude Certified Associate, Claude Code CLI, System Prompt Design, Few-Shot & CoT, RAG pipelines`,
+      sources: ['skills', 'experience', 'certifications']
+    };
+  }
+
+  // 2b. Prompt Engineering & Claude Code
+  if (q.includes('prompt') || q.includes('claude') || q.includes('anthropic') || q.includes('genai') || q.includes('generative ai') || q.includes('llm') || q.includes('copilot') || q.includes('cot') || q.includes('few-shot')) {
+    return {
+      answer: `Arun possesses hands-on expertise in **Prompt Engineering** across both development acceleration and production AI applications:\n\n` +
+        `• **Anthropic Certified:** Holds the **Claude Certified Associate - Foundation** credential, validating deep knowledge of Claude architecture, context window management, and safety guardrails.\n` +
+        `• **Development Acceleration:** Leverages **Claude Code CLI** and GitHub Copilot with structured prompting (Chain-of-Thought, few-shot decomposition) to accelerate legacy .NET migration, refactor Angular components, and synthesize Jasmine unit test suites.\n` +
+        `• **Production LLM Prompt Architecture:** Engineered the dual-layer prompt architecture powering this portfolio's AI chatbot—combining strict system persona locks, grounding anti-hallucination guardrails, and dynamic RAG context injection.\n` +
+        `• **Techniques Mastered:** Few-Shot in-context learning, Chain-of-Thought (CoT), System Prompt Design, Context Window Optimization, and Structured JSON output enforcement.`,
+      sources: ['certifications', 'skills', 'projects']
     };
   }
 
@@ -176,6 +190,7 @@ function getDeterministicFallbackAnswer(question: string): { answer: string; sou
   if (q.includes('certif') || q.includes('kcna') || q.includes('kubernetes') || q.includes('aws') || q.includes('exam') || q.includes('course') || q.includes('credential')) {
     return {
       answer: `Arun holds the following industry certifications:\n\n` +
+        `• **Claude Certified Associate - Foundation:** Issued by Anthropic — validates core competencies in Claude model architecture, prompt engineering strategies, context management, and AI agent workflows.\n` +
         `• **Kubernetes and Cloud Native Associate (KCNA):** Issued by Cloud Native Computing Foundation (CNCF) — validates cloud-native architecture and container orchestration.\n` +
         `• **Prompt Engineering for Generative AI:** Issued by Udemy — covers LLM orchestration, chain-of-thought, and RAG architectures.\n` +
         `• **AWS Certified Solutions Architect – Associate (SAA-C03):** Currently in progress, focusing on scalable cloud system design.`,

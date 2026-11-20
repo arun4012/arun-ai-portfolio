@@ -81,5 +81,18 @@ A: Based on his professional experience, Arun's key strengths include:
 3. Performance optimization (20% page load reduction, virtual scrolling, Web Workers)
 4. Strong collaboration skills in cross-functional Agile teams
 5. CI/CD and automation experience (30% deployment effort reduction)
-6. Continuous learning (KCNA certified, AWS certification in progress, GenAI hackathon participation)
+6. Continuous learning (Claude Certified Associate - Foundation, KCNA certified, AWS certification in progress, GenAI hackathon participation)
+
+**Q: What is Arun's experience with Prompt Engineering and Claude Code?**
+A: Arun possesses hands-on expertise in Prompt Engineering across both development acceleration and production LLM applications:
+1. **Development Acceleration:** Uses Claude Code and GitHub Copilot extensively with structured prompt techniques (Chain-of-Thought, few-shot decomposition) to parse legacy codebases, scaffold Angular components, and generate comprehensive unit test suites.
+2. **Production Prompt Architecture:** Engineered the dual-layer prompt architecture powering this portfolio's AI chatbot, incorporating strict system persona constraints, grounding guardrails to eliminate hallucinations, and dynamic RAG context injection.
+3. **Certifications:** Certified as **Claude Certified Associate - Foundation** by Anthropic and completed **Prompt Engineering for Generative AI** (Udemy).
+
+**Q: What certifications does Arun hold?**
+A: Arun holds the following industry credentials:
+1. **Claude Certified Associate - Foundation** (Anthropic) - Validating Claude architecture, prompt engineering strategies, context management, and safety guardrails.
+2. **Kubernetes and Cloud Native Associate (KCNA)** (Cloud Native Computing Foundation) - Container orchestration and cloud-native architecture.
+3. **Prompt Engineering for Generative AI** (Udemy) - In-context learning, CoT, and LLM orchestration.
+4. **AWS Certified Solutions Architect Associate (SAA-C03)** - Currently in progress.
 

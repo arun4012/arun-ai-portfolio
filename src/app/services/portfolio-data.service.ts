@@ -106,9 +106,9 @@ export class PortfolioDataService {
       category: 'AI & Dev Tools',
       icon: 'sparkles',
       skills: [
-        { name: 'Prompt Engineering', items: ['System Prompts', 'RAG', 'LLMs'], level: 'professional' },
-        { name: 'AI-Assisted Dev', items: ['Claude Code', 'GitHub Copilot'], level: 'professional' },
-        { name: 'Generative AI', items: ['LLM Integration', 'Embeddings', 'RAG Pipeline'], level: 'learning' },
+        { name: 'Prompt Engineering', items: ['Few-Shot & CoT', 'System Prompt Design', 'Guardrails & Grounding', 'Context Optimization', 'Structured JSON'], level: 'professional' },
+        { name: 'Claude Code & AI Dev', items: ['Claude Code CLI', 'Agentic Workflows', 'Prompt-Driven Refactoring', 'Test Synthesis', 'GitHub Copilot'], level: 'professional' },
+        { name: 'Generative AI & RAG', items: ['RAG Architecture', 'Vector Search & Embeddings', 'Cloudflare Workers AI', 'Hallucination Mitigation'], level: 'professional' },
       ],
     },
   ];
@@ -137,6 +137,7 @@ export class PortfolioDataService {
         'Developed audit dashboards using Chart.js with drill-down and Excel export',
         'Developed unit tests with Jasmine and Karma',
         'Supported CI/CD pipelines with GitHub Actions and JFrog Artifactory',
+        'Accelerated legacy code modernization using Claude Code with structured few-shot prompts to translate .NET logic to modular Angular components',
         'Applied AI-assisted development with Claude Code and GitHub Copilot',
       ],
       achievements: [
@@ -150,6 +151,7 @@ export class PortfolioDataService {
         'Bootstrap 5', 'SCSS', 'RxJS', 'Chart.js', 'ngx-translate',
         'REST APIs', 'Microsoft SQL Server', 'Jasmine', 'Karma',
         'GitHub Actions', 'JFrog Artifactory', 'Git', 'Jira',
+        'Claude Code', 'Prompt Engineering',
       ],
     },
   ];
@@ -214,12 +216,12 @@ export class PortfolioDataService {
       technologies: [
         'Angular 18', 'TypeScript', 'Tailwind CSS', 'Cloudflare Pages',
         'Cloudflare Workers AI', 'BAAI BGE Embeddings', 'RAG Pipeline',
-        'Lucide Icons',
+        'Prompt Engineering', 'Claude Code', 'Lucide Icons',
       ],
       responsibilities: [
         'Full-stack development of portfolio and AI chatbot',
         'RAG pipeline implementation (chunking, embedding, retrieval)',
-        'System prompt engineering for grounded responses',
+        'Engineered dual-layer prompt architecture: strict system persona, grounded context injection, and structured fallback reasoning',
         'Zero-cost deployment on Cloudflare free tier',
       ],
       challenges: [
@@ -228,8 +230,8 @@ export class PortfolioDataService {
           solution: 'Used Cloudflare free tier for hosting, AI inference, and embeddings',
         },
         {
-          challenge: 'Preventing AI hallucination about professional details',
-          solution: 'RAG with structured profile retrieval and strict system prompt instructions',
+          challenge: 'Preventing AI hallucination and maintaining tight token budget on edge workers',
+          solution: 'Engineered rigorous system prompts with grounding guardrails, few-shot output constraints, and fallback deterministic handlers',
         },
       ],
       outcomes: [
@@ -238,10 +240,55 @@ export class PortfolioDataService {
         'Demonstrates full-stack + GenAI capabilities',
       ],
       featured: true,
+      promptArchitecture: {
+        summary: 'Production prompt engineering pipeline combining strict role boundary conditioning, zero-shot context injection, grounding constraints, and deterministic fast-paths.',
+        principles: [
+          {
+            title: 'Role & Persona Framing',
+            badge: 'System Prompt',
+            description: 'Strict persona conditioning as Arun\'s verified portfolio representative, enforcing professional tone and domain boundary locks to prevent off-topic jailbreaks.',
+          },
+          {
+            title: 'Grounding & Anti-Hallucination Guardrails',
+            badge: 'Reliability',
+            description: 'Negative constraint enforcement: Answers must strictly derive from retrieved profile facts. Exact ground truth rules for critical details (e.g., 90-day notice period, TCS role).',
+          },
+          {
+            title: 'Dynamic RAG Context Injection',
+            badge: 'Context Window',
+            description: 'Cosine similarity vector retrieval injects top-k chunk contexts with source attribution headers, optimizing context window utilization and reducing token waste.',
+          },
+          {
+            title: 'Claude Code Accelerated Engineering',
+            badge: 'Workflow',
+            description: 'Leveraged Claude Code CLI with iterative prompt-driven workflows to scaffold Angular 18 components, engineer TypeScript interfaces, and optimize production bundles.',
+          },
+        ],
+        promptTemplate: `SYSTEM: You are Arun's professional portfolio AI assistant. Answer questions about Arun Arivalagan accurately, concisely, and professionally.
+
+STRICT GUIDELINES:
+- Answer ONLY questions about Arun's career, technical skills, projects, certifications, education, and availability.
+- Ground your answers in the structured profile and retrieved facts. Do not invent details.
+- Arun's NOTICE PERIOD is strictly 90 days.
+- Primary expertise: Angular (15-21), TypeScript, RxJS, Claude Code, and Prompt Engineering.
+
+GROUND TRUTH PROFILE:
+Name: Arun Arivalagan | Role: System Engineer @ TCS | Client: Prudential Finance
+
+KNOWLEDGE CONTEXT:
+{{retrieved_context_chunks}}`
+      },
     },
   ];
 
   readonly certifications: Certification[] = [
+    {
+      name: 'Claude Certified Associate - Foundation',
+      issuer: 'Anthropic',
+      status: 'completed',
+      description:
+        'Validates core competencies in Claude architecture, prompt engineering strategies, context window management, safety guardrails, and agentic workflows.',
+    },
     {
       name: 'Kubernetes and Cloud Native Associate (KCNA)',
       issuer: 'Cloud Native Computing Foundation (CNCF)',
@@ -254,7 +301,7 @@ export class PortfolioDataService {
       issuer: 'Udemy',
       status: 'completed',
       description:
-        'Techniques for effective prompt engineering with LLMs, including chain-of-thought prompting and practical applications.',
+        'Techniques for effective prompt engineering with LLMs, including chain-of-thought prompting, in-context learning, and practical applications.',
     },
     {
       name: 'AWS Certified Solutions Architect Associate (SAA-C03)',
@@ -267,12 +314,12 @@ export class PortfolioDataService {
 
   readonly suggestedQuestions: SuggestedQuestion[] = [
     { text: 'Introduce Arun', icon: 'user' },
+    { text: 'What prompt engineering skills does he have?', icon: 'sparkles' },
     { text: 'What is his experience with Angular?', icon: 'code-2' },
     { text: 'Explain his current project', icon: 'briefcase' },
-    { text: 'What technologies has he worked with?', icon: 'layers' },
-    { text: 'Does he have experience with AWS?', icon: 'cloud' },
+    { text: 'What certifications does Arun have?', icon: 'star' },
     { text: 'What is his notice period?', icon: 'clock' },
-    { text: 'What are his strengths?', icon: 'star' },
+    { text: 'What technologies has he worked with?', icon: 'layers' },
     { text: 'How can I contact him?', icon: 'mail' },
   ];
 }

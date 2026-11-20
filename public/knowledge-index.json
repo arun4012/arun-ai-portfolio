@@ -1,28 +1,35 @@
 {
-  "generated": "2026-11-19T18:24:37.501Z",
+  "generated": "2026-11-20T14:06:08.695Z",
   "embeddingModel": "@cf/baai/bge-base-en-v1.5",
-  "totalChunks": 72,
+  "totalChunks": 80,
   "hasRealEmbeddings": false,
   "note": "Embeddings are empty placeholders. Re-run with CF_ACCOUNT_ID and CF_API_TOKEN to populate.",
   "chunks": [
     {
-      "id": "certifications-1.-kubernetes-and-cloud-native-associate-(kcna)-0",
+      "id": "certifications-1.-claude-certified-associate---foundation-0",
       "source": "certifications",
-      "section": "1. Kubernetes and Cloud Native Associate (KCNA)",
+      "section": "1. Claude Certified Associate - Foundation",
+      "text": "- **Issuing Organization:** Anthropic\n- **Status:** Completed\n- **Description:** Validates core competencies in Claude model architecture, prompt engineering techniques (chain-of-thought, few-shot, system prompt design), context window management, safety guardrails, and agentic workflows.",
+      "embedding": []
+    },
+    {
+      "id": "certifications-2.-kubernetes-and-cloud-native-associate-(kcna)-0",
+      "source": "certifications",
+      "section": "2. Kubernetes and Cloud Native Associate (KCNA)",
       "text": "- **Issuing Organization:** Cloud Native Computing Foundation (CNCF)\n- **Status:** Completed\n- **Description:** Demonstrates foundational knowledge of Kubernetes and the cloud-native ecosystem, including container orchestration, cloud-native architecture, and the CNCF landscape.",
       "embedding": []
     },
     {
-      "id": "certifications-2.-prompt-engineering-for-generative-ai-0",
+      "id": "certifications-3.-prompt-engineering-for-generative-ai-0",
       "source": "certifications",
-      "section": "2. Prompt Engineering for Generative AI",
+      "section": "3. Prompt Engineering for Generative AI",
       "text": "- **Issuing Organization:** Udemy\n- **Status:** Completed\n- **Description:** Covers techniques for effective prompt engineering with large language models, including chain-of-thought prompting, few-shot learning, and practical applications.",
       "embedding": []
     },
     {
-      "id": "certifications-3.-aws-certified-solutions-architect-associate-(saa-c03)-0",
+      "id": "certifications-4.-aws-certified-solutions-architect-associate-(saa-c03)-0",
       "source": "certifications",
-      "section": "3. AWS Certified Solutions Architect Associate (SAA-C03)",
+      "section": "4. AWS Certified Solutions Architect Associate (SAA-C03)",
       "text": "- **Issuing Organization:** Amazon Web Services (AWS)\n- **Status:** In Progress\n- **Description:** Validates the ability to design distributed systems on AWS, covering compute, storage, networking, database, and security services. Currently preparing for the exam.",
       "embedding": []
     },
@@ -261,7 +268,42 @@
       "id": "faq-strengths-1",
       "source": "faq",
       "section": "Strengths",
-      "text": "CI/CD and automation experience (30% deployment effort reduction)\n6. Continuous learning (KCNA certified, AWS certification in progress, GenAI hackathon participation)",
+      "text": "CI/CD and automation experience (30% deployment effort reduction)\n6. Continuous learning (Claude Certified Associate - Foundation, KCNA certified, AWS certification in progress, GenAI hackathon participation)\n\n**Q: What is Arun's experience with Prompt Engineering and Claude Code?**\nA: Arun possesses hands-on expertise in Prompt Engineering across both development acceleration and production LLM",
+      "embedding": []
+    },
+    {
+      "id": "faq-strengths-2",
+      "source": "faq",
+      "section": "Strengths",
+      "text": "applications:\n1. **Development Acceleration:** Uses Claude Code and GitHub Copilot extensively with structured prompt techniques (Chain-of-Thought, few-shot decomposition) to parse legacy codebases, scaffold Angular components, and generate comprehensive unit test suites.\n2.",
+      "embedding": []
+    },
+    {
+      "id": "faq-strengths-3",
+      "source": "faq",
+      "section": "Strengths",
+      "text": "**Production Prompt Architecture:** Engineered the dual-layer prompt architecture powering this portfolio's AI chatbot, incorporating strict system persona constraints, grounding guardrails to eliminate hallucinations, and dynamic RAG context injection.\n3.",
+      "embedding": []
+    },
+    {
+      "id": "faq-strengths-4",
+      "source": "faq",
+      "section": "Strengths",
+      "text": "**Certifications:** Certified as **Claude Certified Associate - Foundation** by Anthropic and completed **Prompt Engineering for Generative AI** (Udemy).\n\n**Q: What certifications does Arun hold?**\nA: Arun holds the following industry credentials:\n1.",
+      "embedding": []
+    },
+    {
+      "id": "faq-strengths-5",
+      "source": "faq",
+      "section": "Strengths",
+      "text": "**Claude Certified Associate - Foundation** (Anthropic) - Validating Claude architecture, prompt engineering strategies, context management, and safety guardrails.\n2. **Kubernetes and Cloud Native Associate (KCNA)** (Cloud Native Computing Foundation) - Container orchestration and cloud-native architecture.\n3.",
+      "embedding": []
+    },
+    {
+      "id": "faq-strengths-6",
+      "source": "faq",
+      "section": "Strengths",
+      "text": "**Prompt Engineering for Generative AI** (Udemy) - In-context learning, CoT, and LLM orchestration.\n4. **AWS Certified Solutions Architect Associate (SAA-C03)** - Currently in progress.",
       "embedding": []
     },
     {
@@ -492,21 +534,35 @@
       "id": "skills-ai-&-development-tools-(professional-experience)-0",
       "source": "skills",
       "section": "AI & Development Tools (Professional Experience)",
-      "text": "- **Claude Code:** AI-assisted development\n- **GitHub Copilot:** Code completion and generation\n- **Prompt Engineering:** Practical application in development workflows\n- **Chrome DevTools:** Debugging and performance profiling",
+      "text": "- **Claude Code:** AI-assisted development CLI, agentic workflows, prompt-driven refactoring, and test suite synthesis\n- **Prompt Engineering:** Enterprise prompt architecture, Few-Shot in-context learning, Chain-of-Thought (CoT), system prompt design, anti-hallucination guardrails, and structured JSON output\n- **GitHub Copilot:** Code completion and generation\n- **Chrome DevTools:** Debugging and",
+      "embedding": []
+    },
+    {
+      "id": "skills-ai-&-development-tools-(professional-experience)-1",
+      "source": "skills",
+      "section": "AI & Development Tools (Professional Experience)",
+      "text": "performance profiling",
       "embedding": []
     },
     {
       "id": "skills-cloud-&-devops-(learning/certification)-0",
       "source": "skills",
       "section": "Cloud & DevOps (Learning/Certification)",
-      "text": "- **Kubernetes:** KCNA certified (Cloud Native Computing Foundation)\n- **AWS:** Solutions Architect Associate certification in progress\n- **Cloudflare:** Workers AI, Pages (used in this portfolio project)",
+      "text": "- **Kubernetes:** KCNA certified (Cloud Native Computing Foundation)\n- **AWS:** Solutions Architect Associate certification in progress\n- **Cloudflare:** Workers AI, Pages, edge compute (used in this portfolio project)",
       "embedding": []
     },
     {
-      "id": "skills-generative-ai-(learning/personal-projects)-0",
+      "id": "skills-generative-ai-&-prompt-engineering-(professional-&-applied-experience)-0",
       "source": "skills",
-      "section": "Generative AI (Learning/Personal Projects)",
-      "text": "- **LLM Integration:** Practical implementation with Cloudflare Workers AI\n- **RAG (Retrieval-Augmented Generation):** Document processing, embeddings, semantic search\n- **Prompt Engineering:** System prompts, context injection, grounded responses",
+      "section": "Generative AI & Prompt Engineering (Professional & Applied Experience)",
+      "text": "- **Claude Certified Associate - Foundation:** Certified by Anthropic\n- **LLM Integration:** Practical implementation with Cloudflare Workers AI and Claude models\n- **RAG (Retrieval-Augmented Generation):** Document chunking, vector embeddings, cosine similarity search, and dynamic context injection\n- **Production Prompt Architecture:** Dual-layer prompt design, grounding guardrails, deterministic",
+      "embedding": []
+    },
+    {
+      "id": "skills-generative-ai-&-prompt-engineering-(professional-&-applied-experience)-1",
+      "source": "skills",
+      "section": "Generative AI & Prompt Engineering (Professional & Applied Experience)",
+      "text": "fallback reasoning, and token budget optimization",
       "embedding": []
     }
   ]

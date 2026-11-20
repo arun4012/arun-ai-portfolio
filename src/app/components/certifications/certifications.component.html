@@ -10,7 +10,7 @@
   </div>
 
   <!-- Certifications Grid -->
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
     @for (cert of data.certifications; track cert.name) {
       <div class="relative bg-slate-800/50 border border-slate-700/50 rounded-2xl p-6 flex flex-col gap-4 overflow-hidden hover:border-slate-600/60 transition-colors duration-200
         @if (cert.status === 'completed') { border-l-4 border-l-green-500 } @else { border-l-4 border-l-amber-500 }">

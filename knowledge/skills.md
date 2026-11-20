@@ -67,18 +67,19 @@
 - Jira for project management
 
 ## AI & Development Tools (Professional Experience)
-- **Claude Code:** AI-assisted development
+- **Claude Code:** AI-assisted development CLI, agentic workflows, prompt-driven refactoring, and test suite synthesis
+- **Prompt Engineering:** Enterprise prompt architecture, Few-Shot in-context learning, Chain-of-Thought (CoT), system prompt design, anti-hallucination guardrails, and structured JSON output
 - **GitHub Copilot:** Code completion and generation
-- **Prompt Engineering:** Practical application in development workflows
 - **Chrome DevTools:** Debugging and performance profiling
 
 ## Cloud & DevOps (Learning/Certification)
 - **Kubernetes:** KCNA certified (Cloud Native Computing Foundation)
 - **AWS:** Solutions Architect Associate certification in progress
-- **Cloudflare:** Workers AI, Pages (used in this portfolio project)
+- **Cloudflare:** Workers AI, Pages, edge compute (used in this portfolio project)
 
-## Generative AI (Learning/Personal Projects)
-- **LLM Integration:** Practical implementation with Cloudflare Workers AI
-- **RAG (Retrieval-Augmented Generation):** Document processing, embeddings, semantic search
-- **Prompt Engineering:** System prompts, context injection, grounded responses
+## Generative AI & Prompt Engineering (Professional & Applied Experience)
+- **Claude Certified Associate - Foundation:** Certified by Anthropic
+- **LLM Integration:** Practical implementation with Cloudflare Workers AI and Claude models
+- **RAG (Retrieval-Augmented Generation):** Document chunking, vector embeddings, cosine similarity search, and dynamic context injection
+- **Production Prompt Architecture:** Dual-layer prompt design, grounding guardrails, deterministic fallback reasoning, and token budget optimization
 
