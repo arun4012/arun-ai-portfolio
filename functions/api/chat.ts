@@ -1,6 +1,6 @@
 /**
  * Cloudflare Pages Function: POST /api/chat
- * Synchronized with worker/index.ts for consistency
+ * Synchronized with worker/index.ts
  */
 
 interface Env {
@@ -39,29 +39,29 @@ const STRUCTURED_PROFILE = {
   experienceYears: '3+',
   noticePeriod: '90 days',
   availability: 'Available after notice period',
-  location: 'Salem, India',
+  location: 'Salem / Chennai, India',
   email: 'arunariraja@gmail.com',
   linkedin: 'https://linkedin.com/in/arunarivalagan',
   github: 'https://github.com/arun4012',
-  education: 'B.E. Electronics and Communication Engineering, M. Kumarasamy College of Engineering, Karur (2019–2023), CGPA: 8.8/10',
+  education: 'B.E. Electronics and Communication Engineering, M. Kumarasamy College of Engineering, Karur (2019–2023), CGPA: 8.8/10 (First Class with Distinction)',
   certifications: [
-    'Kubernetes and Cloud Native Associate (KCNA) - CNCF',
+    'Kubernetes and Cloud Native Associate (KCNA) - Cloud Native Computing Foundation (CNCF)',
     'Prompt Engineering for Generative AI - Udemy',
-    'AWS Certified Solutions Architect Associate (SAA-C03) - In Progress'
+    'AWS Certified Solutions Architect Associate (SAA-C03) - Currently in progress'
   ],
   topSkills: [
     'Angular (15–21)',
     'TypeScript & JavaScript (ES6+)',
     'RxJS & State Management',
-    'Angular Material & CDK',
+    'Angular Material & Angular CDK',
     'REST API Integration & HttpClient',
     'HTML5, SCSS & Tailwind CSS',
-    'Azure DevOps & Git',
+    'Azure DevOps Pipelines & Git',
     'Kubernetes (KCNA)'
   ]
 };
 
-function retrieveChunksByKeywords(question: string, chunks: KnowledgeChunk[], topK = 4): KnowledgeChunk[] {
+function retrieveChunksByKeywords(question: string, chunks: KnowledgeChunk[], topK = 3): KnowledgeChunk[] {
   const terms = question
     .toLowerCase()
     .replace(/[^a-z0-9\s]/g, '')
@@ -103,7 +103,7 @@ STRICT GUIDELINES:
 - Client: Prudential Finance, Project: ECM – Documentum Modernization.
 - Primary expertise: Angular (15-21), TypeScript, RxJS, Angular Material, REST APIs.
 - Keep responses friendly, recruiter-friendly, and concise (1-3 brief paragraphs or bullet points).
-- For contact, provide email (arunariraja@gmail.com) and LinkedIn.
+- For contact, provide email (${STRUCTURED_PROFILE.email}) and LinkedIn (${STRUCTURED_PROFILE.linkedin}).
 
 GROUND TRUTH PROFILE:
 Name: ${STRUCTURED_PROFILE.fullName}
@@ -126,75 +126,91 @@ ${contextText}`;
 function getDeterministicFallbackAnswer(question: string): { answer: string; sources: string[] } {
   const q = question.toLowerCase();
 
-  if (q.includes('notice') || q.includes('availability') || q.includes('available') || q.includes('join')) {
+  if (q.includes('notice') || q.includes('availab') || q.includes('period') || q.includes('join') || q.includes('start') || q.includes('immediate') || q.includes('offer')) {
     return {
-      answer: `Arun's official notice period is **90 days**. He is currently employed at Tata Consultancy Services (TCS) and will be available to join a new organization following his notice period. For expedited discussions, you can reach him directly at **${STRUCTURED_PROFILE.email}**.`,
+      answer: `Arun's official notice period is **90 days**. He is currently employed at Tata Consultancy Services (TCS) and is actively exploring new opportunities. He will be available to join following his notice period. For urgent hiring requirements or direct discussions, you can reach him at **${STRUCTURED_PROFILE.email}**.`,
       sources: ['profile', 'faq']
     };
   }
 
-  if (q.includes('skill') || q.includes('technolog') || q.includes('stack') || q.includes('framework')) {
+  if (q.includes('skill') || q.includes('technolog') || q.includes('tech') || q.includes('stack') || q.includes('framework') || q.includes('frontend') || q.includes('angular') || q.includes('typescript') || q.includes('rxjs') || q.includes('tool') || q.includes('tailwind')) {
     return {
-      answer: `Arun is a frontend-focused System Engineer with **3+ years** of professional experience. His primary technical stack includes:\n\n` +
-        `• **Frontend:** Angular (15–21), TypeScript, JavaScript (ES6+), HTML5, CSS3/SCSS, Tailwind CSS\n` +
-        `• **UI & Reactive:** Angular Material, Angular CDK, RxJS, Bootstrap 5\n` +
-        `• **Architecture & APIs:** REST API Integration, HttpClient, Reusable Component Architecture\n` +
-        `• **Cloud & DevOps:** Kubernetes (KCNA certified), Azure DevOps CI/CD, Git\n` +
-        `• **AI & Dev Tools:** Prompt Engineering, Generative AI Application Development`,
+      answer: `Arun has **3+ years** of professional experience with enterprise frontend technologies:\n\n` +
+        `• **Frontend Core:** Angular (15–21), TypeScript, JavaScript (ES6+), HTML5, CSS3, SCSS, Tailwind CSS\n` +
+        `• **UI Libraries:** Angular Material, Angular CDK, Bootstrap 5, ng-bootstrap\n` +
+        `• **Reactive Programming:** RxJS (Observables, Subjects, custom operators), Service-based State Management\n` +
+        `• **API & Architecture:** RESTful APIs, HttpClient, Modular & Reusable Component Architecture\n` +
+        `• **Cloud & DevOps:** Kubernetes (KCNA Certified), Azure DevOps CI/CD, Git & GitHub\n` +
+        `• **AI Engineering:** Prompt Engineering, Generative AI Application Development (RAG pipelines)`,
       sources: ['skills', 'experience']
     };
   }
 
-  if (q.includes('project') || q.includes('ecm') || q.includes('documentum') || q.includes('prudential')) {
+  if (q.includes('project') || q.includes('ecm') || q.includes('documentum') || q.includes('prudential') || q.includes('portfolio') || q.includes('build')) {
     return {
-      answer: `Arun is currently leading frontend modernization on the **ECM – Documentum Modernization** project at TCS for **Prudential Finance**:\n\n` +
-        `• Migrated enterprise legacy .NET WebForms/MVC modules into modern, high-performance Angular applications.\n` +
-        `• Built role-based access workflows, audit dashboards with Chart.js, and reusable component libraries.\n` +
-        `• Integrated REST APIs with automated CI/CD pipelines in Azure DevOps.\n\n` +
-        `He also developed this **AI-Powered Portfolio** leveraging Angular 18, Tailwind CSS, Cloudflare Workers AI, and a RAG pipeline.`,
+      answer: `Arun has spearheaded major enterprise frontend projects:\n\n` +
+        `1. **ECM – Documentum Modernization (TCS / Prudential Finance):**\n` +
+        `   • Modernized legacy .NET WebForms and MVC modules into modern Angular SPAs.\n` +
+        `   • Built role-based workflow engines, audit visualization dashboards with Chart.js, and standardized UI libraries.\n` +
+        `   • Integrated complex REST APIs with automated Azure DevOps CI/CD pipelines.\n\n` +
+        `2. **AI-Powered Portfolio (Personal Project):**\n` +
+        `   • Designed an interactive portfolio using Angular 18, Tailwind CSS, and Cloudflare Workers AI with RAG retrieval.\n` +
+        `   • Engineered zero-cost deployment architecture with sub-second response times.`,
       sources: ['projects', 'experience']
     };
   }
 
-  if (q.includes('certif') || q.includes('kcna') || q.includes('aws') || q.includes('course')) {
+  if (q.includes('certif') || q.includes('kcna') || q.includes('kubernetes') || q.includes('aws') || q.includes('exam') || q.includes('course') || q.includes('credential')) {
     return {
-      answer: `Arun holds the following certifications:\n\n` +
-        `1. **Kubernetes and Cloud Native Associate (KCNA)** – CNCF\n` +
-        `2. **Prompt Engineering for Generative AI** – Udemy\n` +
-        `3. **AWS Certified Solutions Architect Associate (SAA-C03)** – Currently in progress`,
+      answer: `Arun holds the following industry certifications:\n\n` +
+        `• **Kubernetes and Cloud Native Associate (KCNA):** Issued by Cloud Native Computing Foundation (CNCF) — validates cloud-native architecture and container orchestration.\n` +
+        `• **Prompt Engineering for Generative AI:** Issued by Udemy — covers LLM orchestration, chain-of-thought, and RAG architectures.\n` +
+        `• **AWS Certified Solutions Architect – Associate (SAA-C03):** Currently in progress, focusing on scalable cloud system design.`,
       sources: ['certifications']
     };
   }
 
-  if (q.includes('contact') || q.includes('email') || q.includes('reach') || q.includes('phone') || q.includes('linkedin')) {
+  if (q.includes('contact') || q.includes('email') || q.includes('mail') || q.includes('reach') || q.includes('phone') || q.includes('mobile') || q.includes('linkedin') || q.includes('github') || q.includes('hire') || q.includes('resume')) {
     return {
       answer: `You can connect with Arun directly through:\n\n` +
         `• **Email:** [${STRUCTURED_PROFILE.email}](mailto:${STRUCTURED_PROFILE.email})\n` +
         `• **LinkedIn:** [linkedin.com/in/arunarivalagan](${STRUCTURED_PROFILE.linkedin})\n` +
         `• **GitHub:** [github.com/arun4012](${STRUCTURED_PROFILE.github})\n` +
-        `• **Location:** Salem / Chennai, India`,
+        `• **Resume:** Available for direct PDF download via the buttons on the portfolio page.`,
       sources: ['profile']
     };
   }
 
-  if (q.includes('experience') || q.includes('tcs') || q.includes('role') || q.includes('work') || q.includes('introduce') || q.includes('who is')) {
+  if (q.includes('education') || q.includes('college') || q.includes('degree') || q.includes('b.e') || q.includes('engineering') || q.includes('cgpa') || q.includes('university') || q.includes('kumarasamy')) {
     return {
-      answer: `**Arun Arivalagan** is a **System Engineer / Angular Developer** at Tata Consultancy Services (TCS) with **3+ years** of professional experience in enterprise web applications.\n\n` +
-        `He specializes in modernizing legacy architectures into responsive Angular single-page applications, with deep expertise in TypeScript, RxJS, REST API integration, and clean component design. He graduated with a B.E. (Distinction, 8.8 CGPA) in 2023 and is KCNA certified.`,
-      sources: ['experience', 'profile']
+      answer: `Arun completed his **Bachelor of Engineering (B.E.)** in **Electronics and Communication Engineering** from **M. Kumarasamy College of Engineering, Karur** (2019–2023), graduating with **First Class with Distinction** and a **CGPA of 8.8/10**.`,
+      sources: ['profile', 'about']
+    };
+  }
+
+  if (q.includes('strength') || q.includes('strong') || q.includes('why hire') || q.includes('specializ')) {
+    return {
+      answer: `Arun's key professional strengths include:\n\n` +
+        `• **Enterprise Modernization:** Proven track record transforming legacy monoliths into clean, modular Angular applications.\n` +
+        `• **Performance Optimization:** Skilled in lazy loading, trackBy, RxJS memory leak prevention, and bundle optimization.\n` +
+        `• **Full Lifecycle Execution:** From UI/UX component development to REST API integration and Azure DevOps deployment.\n` +
+        `• **Modern AI Integration:** Practical understanding of LLM prompt engineering, RAG pipelines, and edge computing.`,
+      sources: ['skills', 'faq']
     };
   }
 
   return {
-    answer: `Arun Arivalagan is a System Engineer at TCS with 3+ years of experience specializing in Angular, TypeScript, and modern frontend architecture. His notice period is 90 days. You can ask about his skills, projects, certifications, or reach him directly at ${STRUCTURED_PROFILE.email}.`,
-    sources: ['profile']
+    answer: `**Arun Arivalagan** is a **System Engineer / Angular Developer** at Tata Consultancy Services (TCS) with **3+ years** of hands-on experience building enterprise web applications.\n\n` +
+      `He specializes in Angular (v15–21), TypeScript, RxJS, and clean component architectures. He is currently working on the ECM modernization project for Prudential Finance and is KCNA certified. His notice period is **90 days**. Feel free to ask about his skills, projects, or reach him at **${STRUCTURED_PROFILE.email}**.`,
+    sources: ['experience', 'profile']
   };
 }
 
 export const onRequestPost: PagesFunction<Env> = async (context) => {
+  let question = '';
   try {
     const body = (await context.request.json()) as ChatRequest;
-    const question = (body.question || '').trim().slice(0, 500);
+    question = (body.question || '').trim().slice(0, 500);
     const history = (body.history || []).slice(-4);
 
     if (!question) {
@@ -230,16 +246,21 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
       const candidateModels = [
         '@cf/meta/llama-3.1-8b-instruct',
         '@cf/meta/llama-3-8b-instruct',
-        '@cf/zai-org/glm-4.7-flash',
       ];
 
       for (const model of candidateModels) {
         try {
-          const llmResponse = (await context.env.AI.run(model, {
+          const timeoutPromise = new Promise((_, reject) =>
+            setTimeout(() => reject(new Error('AI timeout')), 4500)
+          );
+
+          const aiPromise = context.env.AI.run(model, {
             messages,
-            max_tokens: 350,
+            max_tokens: 280,
             temperature: 0.3,
-          })) as any;
+          });
+
+          const llmResponse = (await Promise.race([aiPromise, timeoutPromise])) as any;
 
           const candidateAnswer =
             llmResponse?.response ||
@@ -273,11 +294,11 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
       }
     );
   } catch {
-    const fallback = getDeterministicFallbackAnswer('general');
+    const fallback = getDeterministicFallbackAnswer(question || 'general');
     return new Response(
       JSON.stringify({
         answer: fallback.answer,
-        sources: ['profile'],
+        sources: fallback.sources || ['profile'],
       }),
       {
         status: 200,
