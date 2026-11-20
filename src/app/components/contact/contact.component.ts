@@ -58,8 +58,8 @@ export class ContactComponent {
     {
       icon: 'github',
       label: 'GitHub',
-      value: 'github.com/arunarivalagan',
-      href: 'https://github.com/arunarivalagan',
+      value: 'github.com/arun4012',
+      href: 'https://github.com/arun4012',
       description: 'View my code',
     },
   ];

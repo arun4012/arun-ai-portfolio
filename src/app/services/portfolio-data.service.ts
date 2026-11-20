@@ -20,7 +20,7 @@ export class PortfolioDataService {
     phone: '+91 9361483484',
     email: 'arunariraja@gmail.com',
     linkedin: 'https://linkedin.com/in/arunarivalagan',
-    github: 'https://github.com/arunarivalagan',
+    github: 'https://github.com/arun4012',
     location: 'Salem, India',
     experienceYears: '3+',
     joiningDate: 'July 2023',
