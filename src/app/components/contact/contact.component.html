@@ -15,63 +15,67 @@
     <!-- Left: Contact Cards -->
     <div class="flex flex-col gap-4">
       @for (link of contactLinks; track link.label) {
-        <a
-          [href]="link.href"
-          target="{{ link.icon !== 'mail' ? '_blank' : '_self' }}"
-          rel="noopener noreferrer"
-          class="group flex items-center gap-4 bg-slate-800/50 border border-slate-700/50 rounded-2xl p-5 hover:border-cyan-500/40 hover:bg-slate-800/70 transition-all duration-200">
+        <div
+          class="group flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-slate-800/50 border border-slate-700/50 rounded-2xl p-4 sm:p-5 hover:border-cyan-500/40 hover:bg-slate-800/70 transition-all duration-200">
 
-          <!-- Icon -->
-          <div class="flex items-center justify-center w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-400 shrink-0 group-hover:bg-cyan-500/20 transition-colors duration-200">
-            @if (link.icon === 'mail') {
-              <lucide-icon [img]="MailIcon" [size]="22"></lucide-icon>
-            } @else if (link.icon === 'linkedin') {
-              <lucide-icon [img]="LinkedinIcon" [size]="22"></lucide-icon>
-            } @else if (link.icon === 'github') {
-              <lucide-icon [img]="GithubIcon" [size]="22"></lucide-icon>
-            }
-          </div>
-
-          <!-- Text -->
-          <div class="flex-1 min-w-0">
-            <div class="flex items-center justify-between gap-2">
-              <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider">{{ link.label }}</span>
-              <span class="text-xs text-slate-500">{{ link.description }}</span>
+          <!-- Left Info Section -->
+          <a
+            [href]="link.href"
+            target="{{ link.icon !== 'mail' ? '_blank' : '_self' }}"
+            rel="noopener noreferrer"
+            class="flex items-center gap-3.5 sm:gap-4 min-w-0 flex-1">
+            <!-- Icon -->
+            <div class="flex items-center justify-center w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-cyan-500/10 text-cyan-400 shrink-0 group-hover:bg-cyan-500/20 transition-colors duration-200">
+              @if (link.icon === 'mail') {
+                <lucide-icon [img]="MailIcon" [size]="20"></lucide-icon>
+              } @else if (link.icon === 'linkedin') {
+                <lucide-icon [img]="LinkedinIcon" [size]="20"></lucide-icon>
+              } @else if (link.icon === 'github') {
+                <lucide-icon [img]="GithubIcon" [size]="20"></lucide-icon>
+              }
             </div>
-            <p class="text-sm font-medium text-slate-200 truncate mt-0.5 group-hover:text-cyan-300 transition-colors duration-150">
-              {{ link.value }}
-            </p>
-          </div>
 
-          <!-- Quick Action Buttons for Email on Desktop -->
+            <!-- Text -->
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center justify-between gap-2">
+                <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider">{{ link.label }}</span>
+                <span class="text-xs text-slate-500 hidden sm:inline">{{ link.description }}</span>
+              </div>
+              <p class="text-sm font-medium text-slate-200 truncate mt-0.5 group-hover:text-cyan-300 transition-colors duration-150">
+                {{ link.value }}
+              </p>
+            </div>
+          </a>
+
+          <!-- Quick Action Buttons for Email on Desktop & Mobile -->
           @if (link.icon === 'mail') {
-            <div class="flex items-center gap-1.5 shrink-0" (click)="$event.stopPropagation()">
+            <div class="flex items-center gap-2 pt-2 sm:pt-0 border-t border-slate-700/50 sm:border-t-0 shrink-0" (click)="$event.stopPropagation()">
               <button
                 type="button"
                 (click)="copyEmail($event)"
-                class="px-2.5 py-1.5 rounded-lg text-xs font-medium border transition-all cursor-pointer flex items-center gap-1"
+                class="flex-1 sm:flex-initial px-3 py-1.5 rounded-lg text-xs font-medium border transition-all cursor-pointer flex items-center justify-center gap-1.5"
                 [ngClass]="copied ? 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30' : 'bg-slate-700/60 hover:bg-slate-700 text-slate-300 hover:text-white border-slate-600/50'"
                 title="Copy Email Address">
                 @if (copied) {
                   <lucide-icon [img]="CheckIcon" [size]="14"></lucide-icon>
-                  Copied!
+                  <span>Copied!</span>
                 } @else {
                   <lucide-icon [img]="CopyIcon" [size]="14"></lucide-icon>
-                  Copy
+                  <span>Copy</span>
                 }
               </button>
 
               <button
                 type="button"
                 (click)="openGmail($event)"
-                class="px-2.5 py-1.5 rounded-lg text-xs font-medium bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 transition-all cursor-pointer flex items-center gap-1"
+                class="flex-1 sm:flex-initial px-3 py-1.5 rounded-lg text-xs font-medium bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 transition-all cursor-pointer flex items-center justify-center gap-1.5"
                 title="Open in Gmail">
                 <span>Gmail</span>
                 <lucide-icon [img]="ExternalLinkIcon" [size]="12"></lucide-icon>
               </button>
             </div>
           }
-        </a>
+        </div>
       }
 
       <!-- Availability notice -->
